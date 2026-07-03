@@ -1,0 +1,23 @@
+
+> dyna-mic-diesel@0.1.0 dev
+> next dev --hostname 127.0.0.1 --port 3000
+
+▲ Next.js 16.2.10 (Turbopack)
+- Local:         http://127.0.0.1:3000
+- Network:       http://127.0.0.1:3000
+✓ Ready in 1794ms
+
+ GET / 200 in 2.0s (next.js: 622ms, application-code: 1409ms)
+ GET /volvo-truck-repairs-boksburg 200 in 2.3s (next.js: 1716ms, application-code: 609ms)
+ GET /volvo-truck-repairs-boksburg 200 in 292ms (next.js: 8ms, application-code: 284ms)
+✓ Compiled in 267ms
+ GET /scania-truck-repairs-boksburg 200 in 1624ms (next.js: 923ms, application-code: 701ms)
+✓ Compiled in 174ms
+ GET /mercedes-truck-repairs-boksburg 200 in 1985ms (next.js: 1093ms, application-code: 892ms)
+✓ Compiled in 250ms
+ GET /mercedes-actros-engine-reconditioning-boksburg 200 in 2.4s (next.js: 1363ms, application-code: 1005ms)
+✓ Compiled in 371ms
+✓ Compiled in 378ms
+✓ Compiled in 423ms
+✓ Compiled in 187ms
+ GET / 200 in 998ms (next.js: 190ms, application-code: 808ms)
