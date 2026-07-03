@@ -21,3 +21,40 @@
 ✓ Compiled in 423ms
 ✓ Compiled in 187ms
  GET / 200 in 998ms (next.js: 190ms, application-code: 808ms)
+✓ Compiled in 442ms
+✓ Compiled in 286ms
+✓ Compiled in 112ms
+✓ Compiled in 239ms
+ GET / 200 in 817ms (next.js: 184ms, application-code: 633ms)
+ GET /gallery 200 in 1785ms (next.js: 1437ms, application-code: 348ms)
+ GET /contact 200 in 2.4s (next.js: 2.0s, application-code: 390ms)
+ GET / 200 in 204ms (next.js: 6ms, application-code: 199ms)
+ GET /gallery 200 in 205ms (next.js: 8ms, application-code: 197ms)
+ GET /contact 200 in 191ms (next.js: 6ms, application-code: 185ms)
+ GET / 200 in 187ms (next.js: 4ms, application-code: 183ms)
+ GET /gallery 200 in 207ms (next.js: 5ms, application-code: 202ms)
+ GET /contact 200 in 155ms (next.js: 6ms, application-code: 149ms)
+✓ Compiled in 2s
+✓ Compiled in 1962ms
+✓ Compiled in 660ms
+✓ Compiled in 567ms
+✓ Compiled in 253ms
+✓ Compiled in 442ms
+✓ Compiled in 269ms
+ GET / 200 in 943ms (next.js: 117ms, application-code: 826ms)
+ GET / 200 in 1076ms (next.js: 13ms, application-code: 1063ms)
+ GET / 200 in 538ms (next.js: 7ms, application-code: 530ms)
+ GET /gallery 200 in 1056ms (next.js: 188ms, application-code: 868ms)
+ GET /contact 200 in 1279ms (next.js: 126ms, application-code: 1153ms)
+✓ Compiled in 308ms
+✓ Compiled in 3.1s
+✓ Compiled in 468ms
+✓ Compiled in 107ms
+✓ Compiled in 225ms
+✓ Compiled in 1896ms
+ GET / 200 in 1122ms (next.js: 154ms, application-code: 967ms)
+ GET / 200 in 308ms (next.js: 8ms, application-code: 299ms)
+ GET /gallery 200 in 820ms (next.js: 154ms, application-code: 666ms)
+ GET /contact 200 in 755ms (next.js: 137ms, application-code: 618ms)
+ GET /services/diesel-engine-diagnostics 200 in 1595ms (next.js: 1128ms, generate-params: 1044ms, application-code: 467ms)
+ GET /services/diesel-engine-diagnostics 200 in 565ms (next.js: 187ms, generate-params: 26ms, application-code: 379ms)

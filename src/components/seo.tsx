@@ -46,13 +46,13 @@ export function Breadcrumbs({ items }: { items: LinkItem[] }) {
 
 export function FaqSection({ faq }: { faq: Faq[] }) {
   return (
-    <section className="border-t border-line bg-panel py-14">
+    <section className="border-t border-white/10 bg-[#1b1b1b] py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-8 max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-diesel-red">
+          <p className="text-sm font-black uppercase tracking-[0.16em] text-diesel-red">
             FAQ
           </p>
-          <h2 className="mt-2 text-2xl font-semibold text-foreground">
+          <h2 className="mt-2 text-4xl font-black text-white">
             Common Questions
           </h2>
         </div>
@@ -60,15 +60,15 @@ export function FaqSection({ faq }: { faq: Faq[] }) {
           {faq.map((item) => (
             <details
               key={item.question}
-              className="group rounded border border-line bg-background p-5"
+              className="group rounded-xl border border-white/10 bg-white/[0.035] p-6"
             >
-              <summary className="cursor-pointer list-none font-semibold text-foreground">
+              <summary className="cursor-pointer list-none font-bold text-white">
                 {item.question}
                 <span className="float-right ml-4 text-diesel-red group-open:rotate-45">
                   +
                 </span>
               </summary>
-              <p className="mt-3 text-sm leading-6 text-muted">{item.answer}</p>
+              <p className="mt-4 text-sm leading-6 text-white/62">{item.answer}</p>
             </details>
           ))}
         </div>

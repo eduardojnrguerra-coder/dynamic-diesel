@@ -114,10 +114,10 @@ export default function MercedesTruckRepairsPage() {
               <p className="mt-4 leading-7 text-muted">
                 Dyna-Mic Diesel works on Mercedes-Benz trucks, including
                 Mercedes Actros models, from its Anderbolt workshop in Boksburg.
-                This page is built for operators searching for Mercedes truck
-                repairs Boksburg, Mercedes truck tractor repair Boksburg,
-                Mercedes diesel diagnostics Gauteng and Mercedes truck service
-                Boksburg.
+                Operators can contact the workshop for Mercedes truck repairs
+                Boksburg, Mercedes truck tractor repair Boksburg, Mercedes
+                diesel diagnostics Gauteng and Mercedes truck service Boksburg
+                enquiries.
               </p>
               <p className="mt-4 leading-7 text-muted">
                 The workshop keeps the process practical: understand the

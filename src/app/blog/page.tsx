@@ -17,10 +17,10 @@ const page: SeoPage = {
   metaDescription: metadata.description as string,
   h1: "Diesel Truck Repair Blog",
   summary:
-    "Practical articles built around diesel diagnostics, Mercedes Actros engine reconditioning and fleet maintenance searches.",
+    "Practical articles about diesel diagnostics, Mercedes Actros engine reconditioning and fleet maintenance for truck operators.",
   keywords: ["diesel truck repair blog Boksburg", "diesel diagnostics East Rand"],
   bullets: ["Engine reconditioning topics", "Fleet maintenance planning", "Diagnostics before repair decisions"],
-  proof: ["Blog posts link to service pages", "Articles support long-tail SEO"],
+  proof: ["Articles link to relevant workshop services", "Topics are written for truck operators and fleet owners"],
   faq: commonFaq,
   internalLinks: [
     { label: "Services overview", href: "/services" },

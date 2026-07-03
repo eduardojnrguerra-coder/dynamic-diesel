@@ -17,10 +17,10 @@ const page: SeoPage = {
   metaDescription: metadata.description as string,
   h1: "Diesel Truck Repair Services in Boksburg",
   summary:
-    "Dyna-Mic Diesel focuses on confirmed diesel truck repair services for operators in Boksburg, Anderbolt, the East Rand and Gauteng.",
+    "Dyna-Mic Diesel provides diesel truck repair services for operators in Boksburg, Anderbolt, the East Rand and Gauteng.",
   keywords: ["diesel truck repair services Boksburg", "commercial vehicle repairs Boksburg"],
   bullets: ["Diagnostics and fault finding", "Diesel pump and injector repair enquiries", "Truck services and fleet maintenance"],
-  proof: ["Service pages target specific searches", "Internal links connect services to brands and engines"],
+  proof: ["Workshop support for diagnostics and repairs", "Service links for brands, engines and fleet maintenance"],
   faq: commonFaq,
   internalLinks: [
     { label: "Volvo truck repairs Boksburg", href: "/volvo-truck-repairs-boksburg" },

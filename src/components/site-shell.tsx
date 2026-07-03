@@ -1,72 +1,118 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import {
   ArrowRight,
+  ChevronDown,
+  Globe2,
   Mail,
   MapPin,
   Menu,
   MessageCircle,
   Phone,
-  Wrench,
+  X,
 } from "lucide-react";
 import { business, primaryLinks, type LinkItem } from "@/lib/site";
 
 export function Header() {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-background/95 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-3" aria-label="Dyna-Mic Diesel home">
-          <span className="flex size-10 items-center justify-center rounded bg-steel text-safety">
-            <Wrench size={21} aria-hidden="true" />
-          </span>
-          <span>
-            <span className="block text-base font-black uppercase leading-none">
-              Dyna-Mic
-            </span>
-            <span className="block text-xs font-semibold uppercase tracking-[0.22em] text-diesel-red">
-              Diesel
-            </span>
-          </span>
+    <header
+      className={`sticky top-0 z-50 text-white transition-all duration-300 ${
+        scrolled
+          ? "border-b border-white/10 bg-[#111111]/96 shadow-2xl shadow-black/30 backdrop-blur-xl"
+          : "border-b border-white/5 bg-[#111111]/72 backdrop-blur-md"
+      }`}
+    >
+      <div className="mx-auto flex max-w-[1480px] items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-10">
+        <Link href="/" className="flex items-center" aria-label="Dyna-Mic Diesel home">
+          <Image
+            src="/images/dyna-mic-diesel-logo.png"
+            alt="Dyna-Mic Diesel"
+            width={260}
+            height={72}
+            priority
+            className="h-12 w-auto sm:h-14"
+          />
         </Link>
-        <nav className="hidden items-center gap-4 text-xs font-semibold text-steel xl:flex xl:gap-5 xl:text-sm">
+
+        <nav className="hidden items-center gap-5 text-xs font-black uppercase tracking-[0.1em] text-white/70 xl:flex">
           {primaryLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="hover:text-diesel-red">
+            <Link key={link.href} href={link.href} className="transition hover:text-diesel-red">
               {link.label}
             </Link>
           ))}
         </nav>
+
         <div className="flex items-center gap-2">
-          <IconLink href={business.phoneHref} label="Call Dyna-Mic Diesel">
-            <Phone size={18} />
-          </IconLink>
+          <a
+            href={business.phoneHref}
+            className="hidden h-12 items-center gap-2 rounded border border-white/10 bg-white/5 px-4 text-sm font-black text-white transition hover:border-diesel-red hover:text-diesel-red lg:flex"
+          >
+            <Phone size={17} aria-hidden="true" />
+            {business.phone}
+          </a>
           <IconLink href={business.whatsappHref} label="WhatsApp Dyna-Mic Diesel">
             <MessageCircle size={18} />
           </IconLink>
           <Link
             href="/request-a-quote"
-            className="hidden h-10 items-center gap-2 rounded bg-diesel-red px-4 text-sm font-bold text-white hover:bg-steel sm:flex"
+            className="hidden h-12 items-center gap-2 rounded bg-diesel-red px-5 text-sm font-black text-[#111111] shadow-lg shadow-black/25 transition hover:-translate-y-0.5 hover:bg-safety sm:flex"
           >
             Quote <ArrowRight size={16} aria-hidden="true" />
           </Link>
           <button
             type="button"
-            className="flex size-10 items-center justify-center rounded border border-line text-steel lg:hidden"
-            aria-label="Open navigation"
+            onClick={() => setOpen((value) => !value)}
+            className="flex size-12 items-center justify-center rounded border border-white/12 bg-white/5 text-white transition hover:border-diesel-red hover:text-diesel-red xl:hidden"
+            aria-label={open ? "Close navigation" : "Open navigation"}
           >
-            <Menu size={20} aria-hidden="true" />
+            {open ? <X size={21} aria-hidden="true" /> : <Menu size={21} aria-hidden="true" />}
           </button>
         </div>
       </div>
-      <div className="border-t border-line bg-steel px-4 py-2 text-center text-xs font-semibold text-white sm:text-sm">
-        {business.address} | {business.phone} | Serving Boksburg, Anderbolt, East Rand and Gauteng
-      </div>
-      <nav className="flex gap-4 overflow-x-auto border-t border-line bg-background px-4 py-3 text-xs font-semibold text-steel xl:hidden">
-        {primaryLinks.map((link) => (
-          <Link key={link.href} href={link.href} className="shrink-0 hover:text-diesel-red">
-            {link.label}
-          </Link>
-        ))}
-      </nav>
+
+      {open ? (
+        <nav className="border-t border-white/10 bg-[#111111] px-4 pb-5 pt-2 shadow-2xl xl:hidden">
+          <div className="mx-auto grid max-w-7xl gap-1">
+            {primaryLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="rounded px-3 py-3 text-sm font-bold text-white/78 transition hover:bg-white/7 hover:text-white"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <div className="mt-3 grid grid-cols-2 gap-3">
+              <a
+                href={business.phoneHref}
+                className="inline-flex h-12 items-center justify-center gap-2 rounded bg-diesel-red px-4 text-sm font-black text-[#111111]"
+              >
+                <Phone size={17} /> Call
+              </a>
+              <a
+                href={business.whatsappHref}
+                className="inline-flex h-12 items-center justify-center gap-2 rounded border border-diesel-red px-4 text-sm font-black text-diesel-red"
+              >
+                <MessageCircle size={17} /> WhatsApp
+              </a>
+            </div>
+          </div>
+        </nav>
+      ) : null}
     </header>
   );
 }
@@ -85,7 +131,7 @@ function IconLink({
       href={href}
       aria-label={label}
       title={label}
-      className="flex size-10 items-center justify-center rounded border border-line bg-panel text-steel hover:border-diesel-red hover:text-diesel-red"
+      className="flex size-12 items-center justify-center rounded border border-white/12 bg-white/5 text-white transition hover:-translate-y-0.5 hover:border-diesel-red hover:text-diesel-red"
     >
       {children}
     </a>
@@ -94,42 +140,88 @@ function IconLink({
 
 export function Footer() {
   return (
-    <footer className="border-t border-line bg-steel text-white">
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1.2fr_1fr_1fr] lg:px-8">
+    <footer className="border-t border-white/10 bg-[#0b0b0b] text-white">
+      <div className="mx-auto grid max-w-[1480px] gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] lg:px-10">
         <div>
-          <p className="text-xl font-black uppercase">Dyna-Mic Diesel</p>
-          <p className="mt-3 max-w-md text-sm leading-6 text-white/75">
+          <Image
+            src="/images/dyna-mic-diesel-logo.png"
+            alt="Dyna-Mic Diesel"
+            width={280}
+            height={78}
+            className="h-14 w-auto"
+          />
+          <p className="mt-6 max-w-md text-sm leading-7 text-white/62">
             Diesel truck repair workshop in Anderbolt, Boksburg serving the East
             Rand and Gauteng with {business.experience} of experience.
           </p>
+          <div className="mt-7">
+            <ContactButtons compact />
+          </div>
         </div>
         <div>
-          <p className="font-semibold">Contact</p>
-          <div className="mt-3 space-y-2 text-sm text-white/75">
-            <a className="flex items-center gap-2 hover:text-white" href={business.phoneHref}>
+          <p className="text-sm font-black uppercase tracking-[0.16em] text-diesel-red">
+            Navigation
+          </p>
+          <div className="mt-5 grid gap-3 text-sm text-white/65">
+            {primaryLinks.slice(0, 7).map((link) => (
+              <Link key={link.href} href={link.href} className="transition hover:text-white">
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div>
+          <p className="text-sm font-black uppercase tracking-[0.16em] text-diesel-red">
+            Contact
+          </p>
+          <div className="mt-5 space-y-4 text-sm text-white/65">
+            <a className="flex items-center gap-3 hover:text-white" href={business.phoneHref}>
               <Phone size={16} /> {business.phone}
             </a>
-            <a className="flex items-center gap-2 hover:text-white" href={business.emailHref}>
+            <a className="flex items-center gap-3 hover:text-white" href={business.emailHref}>
               <Mail size={16} /> {business.email}
             </a>
-            <a className="flex items-start gap-2 hover:text-white" href={business.mapHref}>
+            <a className="flex items-start gap-3 hover:text-white" href={business.mapHref}>
               <MapPin size={16} className="mt-1 shrink-0" /> {business.address}
             </a>
           </div>
-        </div>
-        <div>
-          <p className="font-semibold">Key Pages</p>
-          <div className="mt-3 grid gap-2 text-sm text-white/75">
-            <Link href="/volvo-truck-repairs-boksburg" className="hover:text-white">Volvo truck repairs</Link>
-            <Link href="/scania-truck-repairs-boksburg" className="hover:text-white">Scania truck repairs</Link>
-            <Link href="/mercedes-truck-repairs-boksburg" className="hover:text-white">Mercedes truck repairs</Link>
-            <Link href="/mercedes-actros-engine-reconditioning-boksburg" className="hover:text-white">
-              Engine reconditioning
-            </Link>
-            <Link href="/fleet-maintenance" className="hover:text-white">Fleet maintenance</Link>
-            <Link href="/request-a-quote" className="hover:text-white">Request a quote</Link>
+          <div className="mt-6 flex gap-3">
+            {[Globe2, MessageCircle, Phone].map((Icon, index) => (
+              <span
+                key={index}
+                className="flex size-10 items-center justify-center rounded border border-white/10 bg-white/5 text-white/70"
+              >
+                <Icon size={17} aria-hidden="true" />
+              </span>
+            ))}
           </div>
         </div>
+        <div>
+          <p className="text-sm font-black uppercase tracking-[0.16em] text-diesel-red">
+            Service Areas
+          </p>
+          <div className="mt-5 grid grid-cols-2 gap-2">
+            {business.areaServed.map((area) => (
+              <span
+                key={area}
+                className="rounded border border-white/10 bg-white/5 px-3 py-2 text-xs font-bold text-white/68"
+              >
+                {area}
+              </span>
+            ))}
+          </div>
+          <a
+            href={business.mapHref}
+            className="mt-6 flex min-h-32 items-center justify-center rounded border border-white/10 bg-white/5 p-4 text-center text-sm font-bold text-white/68 transition hover:border-diesel-red hover:text-diesel-red"
+          >
+            Google Map
+            <br />
+            Unit 7, The Avenues
+          </a>
+        </div>
+      </div>
+      <div className="border-t border-white/10 px-4 py-5 text-center text-xs text-white/42">
+        Copyright {new Date().getFullYear()} Dyna-Mic Diesel. Anderbolt, Boksburg.
       </div>
     </footer>
   );
@@ -137,17 +229,26 @@ export function Footer() {
 
 export function ContactButtons({ compact = false }: { compact?: boolean }) {
   const base =
-    "inline-flex h-12 items-center justify-center gap-2 rounded px-5 text-sm font-bold transition";
+    "inline-flex h-13 min-h-12 items-center justify-center gap-2 rounded px-6 text-sm font-black transition duration-300";
   return (
     <div className="flex flex-col gap-3 sm:flex-row">
-      <a href={business.phoneHref} className={`${base} bg-diesel-red text-white hover:bg-steel`}>
+      <a
+        href={business.phoneHref}
+        className={`${base} bg-diesel-red text-[#111111] shadow-lg shadow-black/25 hover:-translate-y-0.5 hover:bg-safety`}
+      >
         <Phone size={18} aria-hidden="true" /> Call {compact ? "Now" : business.phone}
       </a>
-      <a href={business.whatsappHref} className={`${base} border border-steel bg-panel text-steel hover:border-diesel-red hover:text-diesel-red`}>
+      <a
+        href={business.whatsappHref}
+        className={`${base} border border-diesel-red/70 bg-white/5 text-diesel-red hover:-translate-y-0.5 hover:bg-diesel-red hover:text-[#111111]`}
+      >
         <MessageCircle size={18} aria-hidden="true" /> WhatsApp
       </a>
       {!compact ? (
-        <Link href="/request-a-quote" className={`${base} bg-steel text-white hover:bg-diesel-red`}>
+        <Link
+          href="/request-a-quote"
+          className={`${base} border border-white/12 bg-white/8 text-white hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/12`}
+        >
           Fleet Quote <ArrowRight size={18} aria-hidden="true" />
         </Link>
       ) : null}
@@ -167,39 +268,39 @@ export function Hero({
   image?: boolean;
 }) {
   return (
-    <section className="industrial-grid border-b border-line bg-background">
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_0.95fr] lg:px-8 lg:py-14">
-        <div className="flex flex-col justify-center">
-          <p className="text-sm font-black uppercase tracking-[0.18em] text-diesel-red">
+    <section className="relative flex min-h-[calc(100vh-88px)] overflow-hidden bg-[#111111] text-white">
+      {image ? (
+        <Image
+          src="/images/workshop-hero.jpg"
+          alt="Premium diesel truck workshop"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-62"
+        />
+      ) : null}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/82 to-[#111111]/28" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-[#111111]/45" />
+      <div className="industrial-grid absolute inset-0 opacity-45" />
+      <div className="relative mx-auto flex w-full max-w-[1480px] items-center px-4 py-24 sm:px-6 lg:px-10">
+        <div className="max-w-5xl">
+          <p className="reveal-up inline-flex rounded border border-diesel-red/35 bg-diesel-red/10 px-4 py-2 text-xs font-black uppercase tracking-[0.24em] text-diesel-red">
             {eyebrow ?? "Diesel truck repairs in Boksburg"}
           </p>
-          <h1 className="mt-4 max-w-4xl text-4xl font-black leading-tight text-foreground sm:text-5xl lg:text-6xl">
+          <h1 className="reveal-up-delay mt-7 max-w-6xl text-balance text-5xl font-black leading-[0.92] tracking-tight sm:text-7xl lg:text-8xl">
             {h1}
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-muted sm:text-lg">
+          <p className="reveal-up-delay mt-7 max-w-3xl text-lg leading-8 text-white/76 sm:text-xl">
             {summary}
           </p>
-          <div className="mt-7">
+          <div className="reveal-up-delay mt-9">
             <ContactButtons />
           </div>
         </div>
-        {image ? (
-          <div className="relative min-h-[320px] overflow-hidden rounded border border-line bg-steel">
-            <Image
-              src="/images/diesel-workshop-hero.png"
-              alt="Diesel truck repair workshop with a commercial truck under service"
-              fill
-              priority
-              sizes="(min-width: 1024px) 48vw, 100vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-steel/90 p-4 text-white">
-              <p className="text-sm font-semibold">
-                {business.experience} diesel experience | Anderbolt, Boksburg
-              </p>
-            </div>
-          </div>
-        ) : null}
+      </div>
+      <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs font-black uppercase tracking-[0.22em] text-white/45 md:flex">
+        Scroll
+        <ChevronDown size={22} className="animate-bounce text-diesel-red" />
       </div>
     </section>
   );
@@ -207,17 +308,59 @@ export function Hero({
 
 export function LinkGrid({ links }: { links: LinkItem[] }) {
   return (
-    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {links.map((link) => (
         <Link
-          key={link.href}
+          key={`${link.label}-${link.href}`}
           href={link.href}
-          className="group flex min-h-20 items-center justify-between rounded border border-line bg-panel p-4 font-semibold text-steel hover:border-diesel-red"
+          className="group overflow-hidden rounded-xl border border-white/10 bg-[#1b1b1b] premium-shadow transition duration-500 hover:-translate-y-1 hover:border-diesel-red/50"
         >
-          <span>{link.label}</span>
-          <ArrowRight size={18} className="text-diesel-red transition group-hover:translate-x-1" />
+          {link.image ? (
+            <div className="relative aspect-[16/10] bg-[#111111]">
+              <Image
+                src={link.image}
+                alt={link.label}
+                fill
+                loading="lazy"
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                className="image-hover object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/72 to-transparent" />
+            </div>
+          ) : null}
+          <div className="flex min-h-32 items-center justify-between gap-4 p-6">
+            <div>
+              <span className="block text-lg font-black text-white">{link.label}</span>
+              {link.description ? (
+                <span className="mt-3 block text-sm leading-6 text-white/60">{link.description}</span>
+              ) : null}
+            </div>
+            <ArrowRight
+              size={22}
+              className="shrink-0 text-diesel-red transition group-hover:translate-x-1"
+            />
+          </div>
         </Link>
       ))}
+    </div>
+  );
+}
+
+function FloatingActions() {
+  return (
+    <div className="fixed bottom-4 left-4 right-4 z-40 grid grid-cols-2 gap-3 sm:left-auto sm:right-5 sm:w-auto sm:grid-cols-1">
+      <a
+        href={business.phoneHref}
+        className="inline-flex h-13 items-center justify-center gap-2 rounded bg-diesel-red px-5 text-sm font-black text-[#111111] shadow-2xl shadow-black/35 transition hover:bg-safety"
+      >
+        <Phone size={18} /> Call
+      </a>
+      <a
+        href={business.whatsappHref}
+        className="inline-flex h-13 items-center justify-center gap-2 rounded border border-diesel-red bg-[#111111] px-5 text-sm font-black text-diesel-red shadow-2xl shadow-black/35 transition hover:bg-diesel-red hover:text-[#111111]"
+      >
+        <MessageCircle size={18} /> WhatsApp
+      </a>
     </div>
   );
 }
@@ -228,6 +371,7 @@ export function PageFrame({ children }: { children: React.ReactNode }) {
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />
+      <FloatingActions />
     </>
   );
 }

@@ -17,7 +17,12 @@ export const business = {
   areaServed: ["Boksburg", "Anderbolt", "East Rand", "Gauteng"],
 };
 
-export type LinkItem = { label: string; href: string };
+export type LinkItem = {
+  label: string;
+  href: string;
+  description?: string;
+  image?: string;
+};
 export type Faq = { question: string; answer: string };
 
 export type SeoPage = {
@@ -177,14 +182,14 @@ export const enginePages: SeoPage[] = [
       "Mercedes Actros V6 OM501 engine reconditioning in Boksburg. Contact Dyna-Mic Diesel for Actros diesel engine repair assessment.",
     h1: "Mercedes Actros V6 OM501 Engine Reconditioning",
     summary:
-      "Dyna-Mic Diesel targets Mercedes Actros V6 OM501 engine reconditioning for truck operators that need a careful workshop assessment before repair decisions are made.",
+      "Dyna-Mic Diesel supports Mercedes Actros V6 OM501 engine reconditioning enquiries for truck operators that need a careful workshop assessment before repair decisions are made.",
     keywords: ["Mercedes Actros V6 OM501 engine reconditioning", "Mercedes OM541 engine reconditioning"],
     bullets: ["Actros V6 repair assessment", "OM501 engine reconditioning", "Engine diagnostics before repair scope"],
-    proof: ["30+ years diesel experience", "Mercedes Actros engine-specific focus"],
+    proof: ["30+ years diesel experience", "Mercedes Actros engine repair support"],
     faq: [
       {
         question: "Do you recondition Mercedes Actros OM501 engines?",
-        answer: "Yes. Mercedes Actros V6 OM501 engine reconditioning is listed as a core engine-specific service.",
+        answer: "Yes. Dyna-Mic Diesel can discuss Mercedes Actros V6 OM501 engine reconditioning enquiries from its Boksburg workshop.",
       },
       {
         question: "Should diagnostics happen before reconditioning?",
@@ -212,7 +217,7 @@ export const enginePages: SeoPage[] = [
     faq: [
       {
         question: "Is OM502 engine reconditioning listed as a focus?",
-        answer: "Yes. Mercedes Actros V8 OM502 engine reconditioning is a core engine-specific page.",
+        answer: "Yes. Mercedes Actros V8 OM502 engine reconditioning enquiries can be discussed with the workshop.",
       },
       {
         question: "Can I send photos or symptoms by WhatsApp?",
@@ -236,7 +241,7 @@ export const enginePages: SeoPage[] = [
     faq: [
       {
         question: "Can I enquire about Mercedes OM541 reconditioning?",
-        answer: "Yes. Mercedes OM541 engine reconditioning is included as an engine-specific SEO page.",
+        answer: "Yes. You can contact Dyna-Mic Diesel about Mercedes OM541 engine reconditioning requirements.",
       },
       {
         question: "Do you serve Gauteng fleets?",
@@ -253,14 +258,14 @@ export const enginePages: SeoPage[] = [
       "Mercedes OM542 engine reconditioning support from Dyna-Mic Diesel in Anderbolt, Boksburg. Actros diesel engine repair enquiries welcome.",
     h1: "Mercedes OM542 Engine Reconditioning",
     summary:
-      "The OM542 page targets Mercedes diesel truck engine reconditioning searches for operators needing an experienced Boksburg workshop.",
+      "Dyna-Mic Diesel supports Mercedes OM542 engine reconditioning enquiries for operators needing an experienced Boksburg workshop.",
     keywords: ["Mercedes OM542 engine reconditioning", "Mercedes Actros engine reconditioning"],
     bullets: ["OM542 repair assessment", "Actros diesel engine work", "Diagnostics-led quote planning"],
-    proof: ["Engine-specific Mercedes focus", "East Rand and Gauteng service coverage"],
+    proof: ["Mercedes engine repair support", "East Rand and Gauteng service coverage"],
     faq: [
       {
         question: "Is OM542 included in your engine reconditioning focus?",
-        answer: "Yes. Mercedes OM542 engine reconditioning is included as a core target page.",
+        answer: "Yes. Mercedes OM542 engine reconditioning enquiries can be discussed with Dyna-Mic Diesel.",
       },
       {
         question: "How do I book an assessment?",
@@ -280,7 +285,7 @@ export const enginePages: SeoPage[] = [
       "Dyna-Mic Diesel supports Scania engine reconditioning enquiries with diesel diagnostics and practical repair planning for Boksburg and East Rand operators.",
     keywords: ["Scania engine reconditioning", "Scania truck repairs East Rand"],
     bullets: ["Scania engine diagnostics", "Reconditioning assessment", "Fleet repair coordination"],
-    proof: ["Brand and engine-specific SEO coverage", "Workshop in Anderbolt"],
+    proof: ["Scania engine repair enquiries", "Workshop in Anderbolt"],
     faq: [
       {
         question: "Can I ask about Scania engine reconditioning?",
@@ -288,7 +293,7 @@ export const enginePages: SeoPage[] = [
       },
       {
         question: "Do you also cover Scania truck repairs?",
-        answer: "Yes. The Scania brand page targets Scania truck repairs in the East Rand.",
+        answer: "Yes. Dyna-Mic Diesel works on Scania truck repair enquiries for Boksburg and East Rand operators.",
       },
     ],
     internalLinks: defaultLinks,
@@ -301,14 +306,14 @@ export const enginePages: SeoPage[] = [
       "Volvo truck engine diagnostics for Boksburg and East Rand operators. Contact Dyna-Mic Diesel for diesel fault finding.",
     h1: "Volvo Truck Engine Diagnostics",
     summary:
-      "This page targets Volvo truck engine diagnostics for operators who need a diesel workshop in Anderbolt, Boksburg with local East Rand coverage.",
+      "Volvo truck engine diagnostics are available for operators who need a diesel workshop in Anderbolt, Boksburg with local East Rand coverage.",
     keywords: ["Volvo truck engine diagnostics", "Volvo truck diagnostics East Rand"],
     bullets: ["Volvo engine fault finding", "Truck diagnostics", "Repair scope recommendations"],
     proof: ["Diagnostics-led workflow", "Boksburg workshop base"],
     faq: [
       {
         question: "Do you offer Volvo truck engine diagnostics?",
-        answer: "Yes. Volvo truck engine diagnostics is a key engine-specific keyword target.",
+        answer: "Yes. Dyna-Mic Diesel can assist with Volvo truck engine diagnostics enquiries.",
       },
       {
         question: "Can diagnostics help before authorising repairs?",
@@ -325,9 +330,9 @@ export const enginePages: SeoPage[] = [
       "Diesel truck engine reconditioning in Boksburg for Mercedes Actros, Scania and commercial truck repair enquiries.",
     h1: "Diesel Truck Engine Reconditioning in Boksburg",
     summary:
-      "Dyna-Mic Diesel targets diesel truck engine reconditioning Boksburg searches for operators needing diagnostics, practical repair planning and quote support.",
+      "Dyna-Mic Diesel supports diesel truck engine reconditioning enquiries for operators needing diagnostics, practical repair planning and quote support.",
     keywords: ["diesel truck engine reconditioning Boksburg", "commercial vehicle repairs Boksburg"],
-    bullets: ["Engine diagnostics", "Reconditioning quote requests", "Brand-specific repair routing"],
+    bullets: ["Engine diagnostics", "Reconditioning quote requests", "Truck repair planning"],
     proof: ["30+ years experience", "Anderbolt workshop serving Gauteng"],
     faq: [
       {
@@ -383,8 +388,8 @@ export const servicePages: SeoPage[] = [
     proof: ["30+ years diesel experience", "Workshop in Anderbolt"],
     faq: [
       {
-        question: "Which truck brands are targeted by this website?",
-        answer: "The website prioritises confirmed Volvo, Scania, Mercedes-Benz and Mercedes Actros truck repair pages.",
+        question: "Which truck brands does Dyna-Mic Diesel work on?",
+        answer: "Dyna-Mic Diesel works on Volvo, Scania and Mercedes-Benz trucks, including Mercedes Actros enquiries.",
       },
       {
         question: "Can diagnostics be part of fleet maintenance?",
@@ -593,7 +598,7 @@ export const locationPages: SeoPage[] = [
       "Diesel truck repairs for Gauteng operators from Dyna-Mic Diesel in Boksburg, focused on Volvo, Scania, Mercedes-Benz and fleet maintenance enquiries.",
     h1: "Diesel Truck Repairs for Gauteng Operators",
     summary:
-      "Dyna-Mic Diesel serves Gauteng truck operators from its Anderbolt workshop, with SEO pages focused on brand, engine, service and local searches.",
+      "Dyna-Mic Diesel serves Gauteng truck operators from its Anderbolt workshop, with support for brand-specific repairs, engine work, servicing and fleet maintenance.",
     keywords: ["diesel truck repairs Gauteng", "fleet maintenance East Rand"],
     bullets: ["Gauteng service area", "Fleet maintenance quote requests", "Engine reconditioning enquiry paths"],
     proof: ["Based in Boksburg", "30+ years diesel workshop experience"],

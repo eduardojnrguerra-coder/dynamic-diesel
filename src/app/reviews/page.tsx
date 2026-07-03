@@ -16,10 +16,10 @@ const page: SeoPage = {
   metaDescription: metadata.description as string,
   h1: "Dyna-Mic Diesel Reviews",
   summary:
-    "A reviews page structured for customer feedback, trust signals and local diesel truck repair search visibility.",
+    "Customer feedback and workshop contact information for Dyna-Mic Diesel in Anderbolt, Boksburg.",
   keywords: ["Dyna-Mic Diesel reviews", "diesel truck repairs Boksburg"],
   bullets: ["Customer feedback section", "Local trust signals", "Clear contact path"],
-  proof: ["Reviews can support local SEO", "No unverified testimonials are invented"],
+  proof: ["Customer feedback can be added when supplied", "No unverified testimonials are invented"],
   faq: commonFaq,
   internalLinks: [
     { label: "Contact", href: "/contact" },

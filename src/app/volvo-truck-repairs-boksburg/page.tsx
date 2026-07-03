@@ -106,10 +106,10 @@ export default function VolvoTruckRepairsPage() {
               </h2>
               <p className="mt-4 leading-7 text-muted">
                 Dyna-Mic Diesel works on Volvo trucks and commercial vehicles
-                from its Anderbolt workshop in Boksburg. The page is built for
-                operators searching for Volvo truck repairs Boksburg, Volvo
-                truck diagnostics East Rand, Volvo truck service Boksburg and
-                commercial Volvo truck repairs Gauteng.
+                from its Anderbolt workshop in Boksburg. Operators can contact
+                the workshop for Volvo truck repairs Boksburg, Volvo truck
+                diagnostics East Rand, Volvo truck service Boksburg and
+                commercial Volvo truck repairs Gauteng enquiries.
               </p>
               <p className="mt-4 leading-7 text-muted">
                 The approach is practical: confirm symptoms, run diagnostics
