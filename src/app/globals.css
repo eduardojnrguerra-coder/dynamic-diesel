@@ -39,13 +39,6 @@ a {
   text-underline-offset: 4px;
 }
 
-.industrial-grid {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
 .premium-shadow {
   box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
 }
@@ -57,6 +50,7 @@ a {
 .section-dark {
   background:
     radial-gradient(circle at top left, rgba(56, 168, 70, 0.12), transparent 34rem),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.035), transparent 30rem),
     #111111;
 }
 

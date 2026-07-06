@@ -58,3 +58,7 @@
  GET /contact 200 in 755ms (next.js: 137ms, application-code: 618ms)
  GET /services/diesel-engine-diagnostics 200 in 1595ms (next.js: 1128ms, generate-params: 1044ms, application-code: 467ms)
  GET /services/diesel-engine-diagnostics 200 in 565ms (next.js: 187ms, generate-params: 26ms, application-code: 379ms)
+✓ Compiled in 246ms
+ GET / 200 in 2.1s (next.js: 561ms, application-code: 1496ms)
+ GET / 200 in 514ms (next.js: 10ms, application-code: 503ms)
+ GET / 200 in 265ms (next.js: 7ms, application-code: 257ms)

@@ -281,7 +281,7 @@ export function Hero({
       ) : null}
       <div className="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/82 to-[#111111]/28" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-[#111111]/45" />
-      <div className="industrial-grid absolute inset-0 opacity-45" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_34%,rgba(255,255,255,0.08),transparent_28rem)]" />
       <div className="relative mx-auto flex w-full max-w-[1480px] items-center px-4 py-24 sm:px-6 lg:px-10">
         <div className="max-w-5xl">
           <p className="reveal-up inline-flex rounded border border-diesel-red/35 bg-diesel-red/10 px-4 py-2 text-xs font-black uppercase tracking-[0.24em] text-diesel-red">
@@ -296,6 +296,9 @@ export function Hero({
           <div className="reveal-up-delay mt-9">
             <ContactButtons />
           </div>
+          <p className="reveal-up-delay mt-4 max-w-2xl text-sm leading-6 text-white/56">
+            Not driving Volvo, Scania or Mercedes? Contact us and we&apos;ll confirm if we can assist.
+          </p>
         </div>
       </div>
       <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs font-black uppercase tracking-[0.22em] text-white/45 md:flex">
