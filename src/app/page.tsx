@@ -17,7 +17,7 @@ import { ContactButtons, Hero, LinkGrid, PageFrame } from "@/components/site-she
 import { business, commonFaq, localBusinessSchema, type LinkItem } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Dyna-Mic Diesel | Diesel Truck Repairs Boksburg and East Rand",
+  title: { absolute: "Dyna-Mic Diesel | Diesel Truck Repairs Boksburg and East Rand" },
   description:
     "Dyna-Mic Diesel in Anderbolt, Boksburg provides diesel truck repairs, diagnostics, engine reconditioning and fleet maintenance support across the East Rand and Gauteng.",
   alternates: { canonical: "/" },
@@ -36,19 +36,19 @@ const brandLinks: LinkItem[] = [
   {
     label: "Volvo",
     href: "/volvo-truck-repairs-boksburg",
-    image: "/images/volvo-truck.jpg",
+    image: "/images/volvo-brand-truck.webp",
     description: "Diagnostics, servicing and repair support for Volvo truck operators.",
   },
   {
     label: "Scania",
     href: "/scania-truck-repairs-boksburg",
-    image: "/images/scania-truck.jpg",
+    image: "/images/scania-brand-truck.webp",
     description: "Practical Scania diesel diagnostics, repairs and maintenance.",
   },
   {
     label: "Mercedes-Benz",
     href: "/mercedes-truck-repairs-boksburg",
-    image: "/images/mercedes-actros.jpg",
+    image: "/images/mercedes-brand-truck.webp",
     description: "Mercedes-Benz and Actros truck repair support from Boksburg.",
   },
 ];

@@ -14,7 +14,7 @@ import { ContactButtons, Hero, PageFrame } from "@/components/site-shell";
 import { business, commonFaq, localBusinessSchema, type LinkItem } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact Dyna-Mic Diesel | Truck Repairs Boksburg",
+  title: { absolute: "Contact Dyna-Mic Diesel | Truck Repairs Boksburg" },
   description:
     "Contact Dyna-Mic Diesel at Unit 7, The Avenues, 128 14th Ave, Anderbolt, Boksburg. Call 082 547 7899 or send a WhatsApp enquiry.",
   alternates: { canonical: "/contact" },
@@ -115,7 +115,7 @@ export default function ContactPage() {
               Use this form for truck repairs, diagnostics, engine
               reconditioning, servicing or fleet maintenance enquiries.
             </p>
-            <form className="mt-6 grid gap-4">
+            <form className="mt-6 grid gap-4" data-conversion="contact-form">
               <Field label="Name" name="name" />
               <Field label="Phone" name="phone" type="tel" />
               <Field label="Email" name="email" type="email" />
@@ -131,6 +131,7 @@ export default function ContactPage() {
               </label>
               <button
                 type="submit"
+                data-conversion="contact-form-submit"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded bg-diesel-red px-5 text-sm font-black text-white hover:bg-steel"
               >
                 Send Enquiry <Send size={18} aria-hidden="true" />

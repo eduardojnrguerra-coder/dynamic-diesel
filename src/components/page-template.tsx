@@ -1,9 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, MapPin } from "lucide-react";
-import { Breadcrumbs, FaqSection, SeoSchemas } from "@/components/seo";
+import { RelatedArticles } from "@/components/related-articles";
+import { Breadcrumbs, FaqSection, JsonLd, SeoSchemas } from "@/components/seo";
 import { ContactButtons, Hero, LinkGrid, PageFrame } from "@/components/site-shell";
-import { business, type LinkItem, type SeoPage } from "@/lib/site";
+import {
+  business,
+  getRelatedArticlesForPage,
+  localBusinessSchema,
+  type LinkItem,
+  type SeoPage,
+} from "@/lib/site";
 
 export function SeoPageTemplate({
   page,
@@ -19,6 +26,7 @@ export function SeoPageTemplate({
   return (
     <PageFrame>
       <SeoSchemas faq={page.faq} breadcrumbs={breadcrumbs} />
+      <JsonLd data={localBusinessSchema()} />
       <div className="bg-[#0b0b0b]">
         <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={breadcrumbs} />
@@ -82,6 +90,8 @@ export function SeoPageTemplate({
                 <LinkGrid links={page.internalLinks} />
               </div>
             </div>
+
+            <RelatedArticles articles={getRelatedArticlesForPage(page)} />
           </div>
 
           <aside className="h-fit overflow-hidden rounded-xl border border-white/10 bg-[#1b1b1b] text-white premium-shadow">

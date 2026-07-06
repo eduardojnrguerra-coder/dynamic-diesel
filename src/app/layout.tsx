@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { AnalyticsPrep } from "@/components/analytics";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.dyna-mic.co.za"),
+  metadataBase: new URL("https://dyna-mic.co.za"),
   title: {
     default: "Dyna-Mic Diesel | Diesel Truck Repairs in Boksburg",
     template: "%s | Dyna-Mic Diesel",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     title: "Dyna-Mic Diesel | Diesel Truck Repairs in Boksburg",
     description:
       "Truck diagnostics, diesel engine reconditioning and fleet maintenance support in Anderbolt, Boksburg.",
-    url: "https://www.dyna-mic.co.za",
+    url: "https://dyna-mic.co.za",
     siteName: "Dyna-Mic Diesel",
     images: [{ url: "/images/diesel-workshop-hero.png", width: 1536, height: 1024 }],
     locale: "en_ZA",
@@ -33,6 +34,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   },
 };
 
@@ -47,6 +51,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <AnalyticsPrep />
         {children}
       </body>
     </html>

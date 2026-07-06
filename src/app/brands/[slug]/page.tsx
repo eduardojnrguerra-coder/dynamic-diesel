@@ -35,7 +35,6 @@ export default async function BrandPage({ params }: Props) {
       page={page}
       breadcrumbs={[
         { label: "Home", href: "/" },
-        { label: "Brands", href: "/brands/scania-truck-repairs" },
         { label: page.title, href: `/brands/${page.slug}` },
       ]}
     />

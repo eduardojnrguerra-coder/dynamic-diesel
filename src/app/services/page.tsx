@@ -4,7 +4,7 @@ import { LinkGrid } from "@/components/site-shell";
 import { commonFaq, servicePages, type SeoPage } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Diesel Truck Repair Services Boksburg | Dyna-Mic Diesel",
+  title: { absolute: "Diesel Truck Repair Services Boksburg | Dyna-Mic Diesel" },
   description:
     "Diesel truck repair services in Boksburg including diagnostics, pump repairs, injector repairs, engine dyno testing, truck services and commercial vehicle repairs.",
   alternates: { canonical: "/services" },

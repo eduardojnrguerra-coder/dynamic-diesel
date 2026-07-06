@@ -3,7 +3,7 @@ import { SeoPageTemplate } from "@/components/page-template";
 import { commonFaq, type SeoPage } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About Dyna-Mic Diesel | Diesel Truck Workshop Boksburg",
+  title: { absolute: "About Dyna-Mic Diesel | Diesel Truck Workshop Boksburg" },
   description:
     "About Dyna-Mic Diesel, a diesel truck repair workshop in Anderbolt, Boksburg with 30+ years of experience serving the East Rand and Gauteng.",
   alternates: { canonical: "/about" },

@@ -44,7 +44,10 @@ export default function RequestQuotePage() {
         { label: "Request a Quote", href: "/request-a-quote" },
       ]}
     >
-      <form className="mt-10 grid gap-4 rounded border border-line bg-background p-6">
+      <form
+        className="mt-10 grid gap-4 rounded border border-line bg-background p-6"
+        data-conversion="quote-form"
+      >
         <div className="grid gap-4 md:grid-cols-2">
           <Field label="Name" name="name" />
           <Field label="Phone" name="phone" />
@@ -67,12 +70,14 @@ export default function RequestQuotePage() {
         <div className="flex flex-col gap-3 sm:flex-row">
           <a
             href={business.whatsappHref}
+            data-conversion="whatsapp-click"
             className="inline-flex h-12 items-center justify-center rounded bg-diesel-red px-5 text-sm font-bold text-white hover:bg-steel"
           >
             Send WhatsApp Enquiry
           </a>
           <a
             href={business.emailHref}
+            data-conversion="email-click"
             className="inline-flex h-12 items-center justify-center rounded border border-steel bg-panel px-5 text-sm font-bold text-steel hover:border-diesel-red hover:text-diesel-red"
           >
             Email Quote Details

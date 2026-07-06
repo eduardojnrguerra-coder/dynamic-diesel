@@ -106,10 +106,10 @@ export default function ScaniaTruckRepairsPage() {
               </h2>
               <p className="mt-4 leading-7 text-muted">
                 Dyna-Mic Diesel works on Scania trucks and commercial diesel
-                vehicles from its Anderbolt workshop in Boksburg. This page is
-                built for operators searching for Scania truck repairs Boksburg,
+                vehicles from its Anderbolt workshop in Boksburg. Operators
+                can contact the workshop for Scania truck repairs Boksburg,
                 Scania mechanic Boksburg, Scania diesel diagnostics East Rand
-                and commercial Scania truck repairs.
+                and commercial Scania truck repairs enquiries.
               </p>
               <p className="mt-4 leading-7 text-muted">
                 The workshop keeps the repair process practical: understand the

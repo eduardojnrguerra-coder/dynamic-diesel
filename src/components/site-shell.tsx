@@ -58,6 +58,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <a
             href={business.phoneHref}
+            data-conversion="phone-click"
             className="hidden h-12 items-center gap-2 rounded border border-white/10 bg-white/5 px-4 text-sm font-black text-white transition hover:border-diesel-red hover:text-diesel-red lg:flex"
           >
             <Phone size={17} aria-hidden="true" />
@@ -99,12 +100,14 @@ export function Header() {
             <div className="mt-3 grid grid-cols-2 gap-3">
               <a
                 href={business.phoneHref}
+                data-conversion="phone-click"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded bg-diesel-red px-4 text-sm font-black text-[#111111]"
               >
                 <Phone size={17} /> Call
               </a>
               <a
                 href={business.whatsappHref}
+                data-conversion="whatsapp-click"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded border border-diesel-red px-4 text-sm font-black text-diesel-red"
               >
                 <MessageCircle size={17} /> WhatsApp
@@ -131,6 +134,7 @@ function IconLink({
       href={href}
       aria-label={label}
       title={label}
+      data-conversion={href.includes("wa.me") ? "whatsapp-click" : "external-click"}
       className="flex size-12 items-center justify-center rounded border border-white/12 bg-white/5 text-white transition hover:-translate-y-0.5 hover:border-diesel-red hover:text-diesel-red"
     >
       {children}
@@ -234,12 +238,14 @@ export function ContactButtons({ compact = false }: { compact?: boolean }) {
     <div className="flex flex-col gap-3 sm:flex-row">
       <a
         href={business.phoneHref}
+        data-conversion="phone-click"
         className={`${base} bg-diesel-red text-[#111111] shadow-lg shadow-black/25 hover:-translate-y-0.5 hover:bg-safety`}
       >
         <Phone size={18} aria-hidden="true" /> Call {compact ? "Now" : business.phone}
       </a>
       <a
         href={business.whatsappHref}
+        data-conversion="whatsapp-click"
         className={`${base} border border-diesel-red/70 bg-white/5 text-diesel-red hover:-translate-y-0.5 hover:bg-diesel-red hover:text-[#111111]`}
       >
         <MessageCircle size={18} aria-hidden="true" /> WhatsApp
@@ -247,6 +253,7 @@ export function ContactButtons({ compact = false }: { compact?: boolean }) {
       {!compact ? (
         <Link
           href="/request-a-quote"
+          data-conversion="quote-click"
           className={`${base} border border-white/12 bg-white/8 text-white hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/12`}
         >
           Fleet Quote <ArrowRight size={18} aria-hidden="true" />
@@ -354,12 +361,14 @@ function FloatingActions() {
     <div className="fixed bottom-4 left-4 right-4 z-40 grid grid-cols-2 gap-3 sm:left-auto sm:right-5 sm:w-auto sm:grid-cols-1">
       <a
         href={business.phoneHref}
+        data-conversion="phone-click"
         className="inline-flex h-13 items-center justify-center gap-2 rounded bg-diesel-red px-5 text-sm font-black text-[#111111] shadow-2xl shadow-black/35 transition hover:bg-safety"
       >
         <Phone size={18} /> Call
       </a>
       <a
         href={business.whatsappHref}
+        data-conversion="whatsapp-click"
         className="inline-flex h-13 items-center justify-center gap-2 rounded border border-diesel-red bg-[#111111] px-5 text-sm font-black text-diesel-red shadow-2xl shadow-black/35 transition hover:bg-diesel-red hover:text-[#111111]"
       >
         <MessageCircle size={18} /> WhatsApp

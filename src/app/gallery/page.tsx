@@ -5,7 +5,7 @@ import { SeoPageTemplate } from "@/components/page-template";
 import { commonFaq, type SeoPage } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Workshop & Services | Dyna-Mic Diesel Boksburg",
+  title: { absolute: "Workshop & Services | Dyna-Mic Diesel Boksburg" },
   description:
     "View Dyna-Mic Diesel workshop service areas including diesel diagnostics, engine reconditioning, pumps, injectors and fleet maintenance in Boksburg.",
   alternates: { canonical: "/gallery" },

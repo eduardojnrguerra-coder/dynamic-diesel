@@ -3,7 +3,7 @@ import { SeoPageTemplate } from "@/components/page-template";
 import { commonFaq, type SeoPage } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Diesel Pumps and Injectors Boksburg | Dyna-Mic Diesel",
+  title: { absolute: "Diesel Pumps and Injectors Boksburg | Dyna-Mic Diesel" },
   description:
     "Diesel pumps and injectors support for Volvo truck repairs, diesel diagnostics and commercial vehicle maintenance in Boksburg and the East Rand.",
   alternates: { canonical: "/services/diesel-pumps-and-injectors" },

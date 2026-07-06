@@ -25,7 +25,10 @@ export default async function EnginePage({ params }: Props) {
       page={page}
       breadcrumbs={[
         { label: "Home", href: "/" },
-        { label: "Engines", href: "/engines/mercedes-actros-om501-reconditioning" },
+        {
+          label: "Engine Reconditioning",
+          href: "/mercedes-actros-engine-reconditioning-boksburg",
+        },
         { label: page.title, href: `/engines/${page.slug}` },
       ]}
     />
