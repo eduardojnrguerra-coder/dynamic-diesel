@@ -24,7 +24,7 @@ const page: SeoPage = {
   internalLinks: [
     { label: "Volvo Truck Repairs", href: "/volvo-truck-repairs-boksburg" },
     { label: "Fleet Maintenance", href: "/fleet-maintenance" },
-    { label: "Request a Quote", href: "/request-a-quote" },
+    { label: "Request a Quote", href: "/request-a-quote#quote-form" },
   ],
 };
 

@@ -14,7 +14,7 @@ import {
   Phone,
   X,
 } from "lucide-react";
-import { business, primaryLinks, type LinkItem } from "@/lib/site";
+import { business, footerServiceLinks, primaryLinks, quoteHref, type LinkItem } from "@/lib/site";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -68,7 +68,7 @@ export function Header() {
             <MessageCircle size={18} />
           </IconLink>
           <Link
-            href="/request-a-quote"
+            href={quoteHref}
             className="hidden h-12 items-center gap-2 rounded bg-diesel-red px-5 text-sm font-black text-[#111111] shadow-lg shadow-black/25 transition hover:-translate-y-0.5 hover:bg-safety sm:flex"
           >
             Quote <ArrowRight size={16} aria-hidden="true" />
@@ -167,7 +167,17 @@ export function Footer() {
             Navigation
           </p>
           <div className="mt-5 grid gap-3 text-sm text-white/65">
-            {primaryLinks.slice(0, 7).map((link) => (
+            {primaryLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="transition hover:text-white">
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <p className="mt-8 text-sm font-black uppercase tracking-[0.16em] text-diesel-red">
+            Key Services
+          </p>
+          <div className="mt-5 grid gap-3 text-sm text-white/65">
+            {footerServiceLinks.map((link) => (
               <Link key={link.href} href={link.href} className="transition hover:text-white">
                 {link.label}
               </Link>
@@ -252,7 +262,7 @@ export function ContactButtons({ compact = false }: { compact?: boolean }) {
       </a>
       {!compact ? (
         <Link
-          href="/request-a-quote"
+          href={quoteHref}
           data-conversion="quote-click"
           className={`${base} border border-white/12 bg-white/8 text-white hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/12`}
         >

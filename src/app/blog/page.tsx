@@ -25,7 +25,7 @@ const page: SeoPage = {
   internalLinks: [
     { label: "Services overview", href: "/services" },
     { label: "Mercedes Actros engine reconditioning", href: "/mercedes-actros-engine-reconditioning-boksburg" },
-    { label: "Request a quote", href: "/request-a-quote" },
+    { label: "Request a quote", href: "/request-a-quote#quote-form" },
   ],
 };
 

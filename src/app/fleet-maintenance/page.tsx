@@ -31,7 +31,7 @@ const page: SeoPage = {
   internalLinks: [
     { label: "Truck services", href: "/services/truck-services" },
     { label: "Commercial vehicle repairs", href: "/services/commercial-vehicle-repairs" },
-    { label: "Request a quote", href: "/request-a-quote" },
+    { label: "Request a quote", href: "/request-a-quote#quote-form" },
   ],
 };
 

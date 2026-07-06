@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const siteUrl = "https://dyna-mic.co.za";
+export const quoteHref = "/request-a-quote#quote-form";
 
 export const business = {
   name: "Dyna-Mic Diesel",
@@ -60,15 +61,18 @@ export type SeoPage = {
 
 export const primaryLinks: LinkItem[] = [
   { label: "Home", href: "/" },
-  { label: "Volvo", href: "/volvo-truck-repairs-boksburg" },
-  { label: "Scania", href: "/scania-truck-repairs-boksburg" },
-  { label: "Mercedes", href: "/mercedes-truck-repairs-boksburg" },
-  { label: "Engine Reconditioning", href: "/mercedes-actros-engine-reconditioning-boksburg" },
   { label: "Services", href: "/services" },
-  { label: "Fleet Maintenance", href: "/fleet-maintenance" },
-  { label: "Gallery", href: "/gallery" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
+];
+
+export const footerServiceLinks: LinkItem[] = [
+  { label: "Volvo Truck Repairs", href: "/volvo-truck-repairs-boksburg" },
+  { label: "Scania Truck Repairs", href: "/scania-truck-repairs-boksburg" },
+  { label: "Mercedes Truck Repairs", href: "/mercedes-truck-repairs-boksburg" },
+  { label: "Engine Reconditioning", href: "/mercedes-actros-engine-reconditioning-boksburg" },
+  { label: "Diesel Diagnostics", href: "/services/diesel-engine-diagnostics" },
+  { label: "Fleet Maintenance", href: "/fleet-maintenance" },
 ];
 
 export const commonFaq: Faq[] = [
@@ -100,7 +104,7 @@ const defaultLinks: LinkItem[] = [
   { label: "Engine Dyno Testing", href: "/services/engine-dyno-testing" },
   { label: "Fleet Maintenance", href: "/fleet-maintenance" },
   { label: "Contact", href: "/contact" },
-  { label: "Request Quote", href: "/request-a-quote" },
+  { label: "Request Quote", href: quoteHref },
 ];
 
 export const brandPages: SeoPage[] = [
@@ -181,7 +185,7 @@ export const brandPages: SeoPage[] = [
     internalLinks: [
       { label: "OM501 reconditioning", href: "/engines/mercedes-actros-om501-reconditioning" },
       { label: "OM502 reconditioning", href: "/engines/mercedes-actros-om502-reconditioning" },
-      { label: "Request a quote", href: "/request-a-quote" },
+      { label: "Request a quote", href: quoteHref },
     ],
   },
 ];
@@ -212,7 +216,7 @@ export const enginePages: SeoPage[] = [
     internalLinks: [
       { label: "Mercedes truck tractor repairs", href: "/brands/mercedes-truck-tractor-repairs" },
       { label: "Diesel engine diagnostics", href: "/services/diesel-engine-diagnostics" },
-      { label: "Request a quote", href: "/request-a-quote" },
+      { label: "Request a quote", href: quoteHref },
     ],
   },
   {
@@ -766,7 +770,7 @@ export const blogPosts: SeoPage[] = [
       { label: "Diesel engine diagnostics", href: "/services/diesel-engine-diagnostics" },
       { label: "Mercedes Actros Engine Reconditioning", href: "/mercedes-actros-engine-reconditioning-boksburg" },
       { label: "Engine Dyno Testing", href: "/services/engine-dyno-testing" },
-      { label: "Request a Quote", href: "/request-a-quote" },
+      { label: "Request a Quote", href: quoteHref },
     ],
     article: article(
       [
@@ -929,7 +933,7 @@ export const blogPosts: SeoPage[] = [
       { label: "Diesel Pumps and Injectors", href: "/services/diesel-pumps-and-injectors" },
       { label: "Diesel Diagnostics", href: "/services/diesel-engine-diagnostics" },
       { label: "Truck Services", href: "/services/truck-services-maintenance-and-repairs" },
-      { label: "Request a Quote", href: "/request-a-quote" },
+      { label: "Request a Quote", href: quoteHref },
     ],
     article: article(
       [
@@ -1040,7 +1044,7 @@ export const blogPosts: SeoPage[] = [
       { label: "Mercedes Actros Engine Reconditioning", href: "/mercedes-actros-engine-reconditioning-boksburg" },
       { label: "Diesel Diagnostics", href: "/services/diesel-engine-diagnostics" },
       { label: "Engine Dyno Testing", href: "/services/engine-dyno-testing" },
-      { label: "Request a Quote", href: "/request-a-quote" },
+      { label: "Request a Quote", href: quoteHref },
     ],
     article: article(
       [

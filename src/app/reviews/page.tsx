@@ -23,7 +23,7 @@ const page: SeoPage = {
   faq: commonFaq,
   internalLinks: [
     { label: "Contact", href: "/contact" },
-    { label: "Request a quote", href: "/request-a-quote" },
+    { label: "Request a quote", href: "/request-a-quote#quote-form" },
     { label: "About", href: "/about" },
   ],
 };

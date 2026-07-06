@@ -92,7 +92,7 @@ const workshopServices: LinkItem[] = [
   },
   {
     label: "Request a Quote",
-    href: "/request-a-quote",
+    href: "/request-a-quote#quote-form",
     image: "/images/mercedes-actros.jpg",
     description: "Send the truck details, symptoms and service requirements.",
   },

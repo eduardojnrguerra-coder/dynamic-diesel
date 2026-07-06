@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
-import { SeoPageTemplate } from "@/components/page-template";
-import { business, commonFaq, type SeoPage } from "@/lib/site";
+import { QuoteRequestForm } from "@/components/quote-request-form";
+import { Breadcrumbs, FaqSection, JsonLd, SeoSchemas } from "@/components/seo";
+import { Hero, LinkGrid, PageFrame } from "@/components/site-shell";
+import {
+  commonFaq,
+  localBusinessSchema,
+  type LinkItem,
+  type SeoPage,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Request a Quote | Diesel Truck Repairs Boksburg",
@@ -35,79 +42,39 @@ const page: SeoPage = {
   ],
 };
 
+const breadcrumbs: LinkItem[] = [
+  { label: "Home", href: "/" },
+  { label: "Request a Quote", href: "/request-a-quote" },
+];
+
 export default function RequestQuotePage() {
   return (
-    <SeoPageTemplate
-      page={page}
-      breadcrumbs={[
-        { label: "Home", href: "/" },
-        { label: "Request a Quote", href: "/request-a-quote" },
-      ]}
-    >
-      <form
-        className="mt-10 grid gap-4 rounded border border-line bg-background p-6"
-        data-conversion="quote-form"
-      >
-        <div className="grid gap-4 md:grid-cols-2">
-          <Field label="Name" name="name" />
-          <Field label="Phone" name="phone" />
-          <Field label="Email" name="email" type="email" />
-          <Field label="Company or fleet name" name="company" />
-          <Field label="Truck brand" name="brand" placeholder="Volvo, Scania, Mercedes-Benz, Mercedes Actros" />
-          <Field label="Engine model or code" name="engine" placeholder="OM501, OM502, OM541, OM542" />
-          <Field label="Number of vehicles" name="vehicles" type="number" />
-          <Field label="Location" name="location" placeholder="Boksburg, Anderbolt, East Rand, Gauteng" />
+    <PageFrame>
+      <SeoSchemas faq={page.faq} breadcrumbs={breadcrumbs} />
+      <JsonLd data={localBusinessSchema()} />
+      <div className="bg-[#0b0b0b]">
+        <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+          <Breadcrumbs items={breadcrumbs} />
         </div>
-        <label className="grid gap-2 text-sm font-semibold text-steel">
-          Symptoms or quote details
-          <textarea
-            name="details"
-            rows={6}
-            className="rounded border border-line bg-panel px-3 py-3 font-normal text-foreground outline-none focus:border-diesel-red"
-            placeholder="Describe warning lights, running issues, required service, engine reconditioning enquiry or fleet maintenance needs."
-          />
-        </label>
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <a
-            href={business.whatsappHref}
-            data-conversion="whatsapp-click"
-            className="inline-flex h-12 items-center justify-center rounded bg-diesel-red px-5 text-sm font-bold text-white hover:bg-steel"
-          >
-            Send WhatsApp Enquiry
-          </a>
-          <a
-            href={business.emailHref}
-            data-conversion="email-click"
-            className="inline-flex h-12 items-center justify-center rounded border border-steel bg-panel px-5 text-sm font-bold text-steel hover:border-diesel-red hover:text-diesel-red"
-          >
-            Email Quote Details
-          </a>
-        </div>
-      </form>
-    </SeoPageTemplate>
-  );
-}
+      </div>
+      <Hero h1={page.h1} summary={page.summary} eyebrow="Request a quote" />
+      <QuoteRequestForm />
 
-function Field({
-  label,
-  name,
-  type = "text",
-  placeholder,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  placeholder?: string;
-}) {
-  return (
-    <label className="grid gap-2 text-sm font-semibold text-steel">
-      {label}
-      <input
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        className="h-12 rounded border border-line bg-panel px-3 font-normal text-foreground outline-none focus:border-diesel-red"
-      />
-    </label>
+      <section className="border-y border-white/10 bg-[#1b1b1b] py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-black uppercase tracking-[0.16em] text-diesel-red">
+            Useful Links
+          </p>
+          <h2 className="mt-2 text-4xl font-black text-white">
+            Related workshop pages
+          </h2>
+          <div className="mt-7">
+            <LinkGrid links={page.internalLinks} />
+          </div>
+        </div>
+      </section>
+
+      <FaqSection faq={page.faq} />
+    </PageFrame>
   );
 }

@@ -207,7 +207,7 @@ export default function ScaniaTruckRepairsPage() {
               <ContactButtons compact />
             </div>
             <Link
-              href="/request-a-quote"
+              href="/request-a-quote#quote-form"
               className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-safety hover:text-white"
             >
               Request a quote <ArrowRight size={16} />

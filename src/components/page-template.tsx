@@ -8,6 +8,7 @@ import {
   business,
   getRelatedArticlesForPage,
   localBusinessSchema,
+  quoteHref,
   type LinkItem,
   type SeoPage,
 } from "@/lib/site";
@@ -171,7 +172,7 @@ export function SeoPageTemplate({
           <div>
             <ContactButtons />
             <Link
-              href="/request-a-quote"
+              href={quoteHref}
               className="mt-4 inline-flex items-center gap-2 text-sm font-black text-diesel-red hover:text-white"
             >
               Request a detailed quote <ArrowRight size={18} />
