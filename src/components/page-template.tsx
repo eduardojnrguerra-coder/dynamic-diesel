@@ -192,7 +192,7 @@ function imageForPage(page: SeoPage) {
   if (text.includes("injector") || text.includes("pump")) return "/images/diesel-injectors.jpg";
   if (text.includes("dyno")) return "/images/dyno-testing.jpg";
   if (text.includes("diagnostic")) return "/images/diagnostics.jpg";
-  if (text.includes("fleet")) return "/images/fleet-maintenance.jpg";
+  if (text.includes("fleet")) return "/images/service-fleet-maintenance-workshop.webp";
   if (text.includes("engine")) return "/images/engine-reconditioning.jpg";
   return "/images/workshop-hero.jpg";
 }

@@ -195,11 +195,11 @@ export function truckBrandMetadata(brand: TruckBrandPage): Metadata {
 }
 
 export const brandServiceLinks: LinkItem[] = [
-  { label: "Truck Servicing", href: "/truck-servicing-boksburg", image: "/images/truck-servicing.svg" },
-  { label: "Truck Brake Repairs", href: "/truck-brake-repairs-boksburg", image: "/images/truck-brake-repairs.svg" },
+  { label: "Truck Servicing", href: "/truck-servicing-boksburg", image: "/images/service-truck-servicing-workshop.webp" },
+  { label: "Truck Brake Repairs", href: "/truck-brake-repairs-boksburg", image: "/images/service-truck-brake-repairs-4k.webp" },
   { label: "Diesel Diagnostics", href: "/diesel-diagnostics-boksburg", image: "/images/diagnostics.jpg" },
-  { label: "Preventative Maintenance", href: "/preventative-truck-maintenance-boksburg", image: "/images/truck-health-inspection.svg" },
-  { label: "Fleet Maintenance", href: "/fleet-maintenance-boksburg", image: "/images/fleet-maintenance.jpg" },
+  { label: "Preventative Maintenance", href: "/preventative-truck-maintenance-boksburg", image: "/images/service-truck-health-inspection-4k.webp" },
+  { label: "Fleet Maintenance", href: "/fleet-maintenance-boksburg", image: "/images/service-fleet-maintenance-workshop.webp" },
   { label: "Request a Quote", href: quoteHref, image: "/images/mercedes-actros.jpg" },
 ];
 

@@ -85,19 +85,19 @@ const serviceCards: LinkItem[] = [
     label: "Truck Servicing & Repairs",
     href: "/truck-servicing-boksburg",
     description: "Truck servicing, maintenance and repair planning from the Anderbolt workshop.",
-    image: "/images/truck-servicing.svg",
+    image: "/images/service-truck-servicing-workshop.webp",
   },
   {
     label: "Preventative Maintenance",
     href: "/preventative-truck-maintenance-boksburg",
     description: "Maintenance planning that helps identify service needs and repeat faults earlier.",
-    image: "/images/truck-health-inspection.svg",
+    image: "/images/service-truck-health-inspection-4k.webp",
   },
   {
     label: "Fleet Maintenance",
     href: "/fleet-maintenance-boksburg",
     description: "Workshop support for commercial fleets that need practical maintenance coordination.",
-    image: "/images/fleet-maintenance.jpg",
+    image: "/images/service-fleet-maintenance-workshop.webp",
   },
 ];
 

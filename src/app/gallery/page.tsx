@@ -59,7 +59,7 @@ const serviceAreas = [
   },
   {
     title: "Fleet Maintenance",
-    image: "/images/fleet-maintenance.jpg",
+    image: "/images/service-fleet-maintenance-workshop.webp",
     copy: "Service and maintenance support for commercial vehicle operators who need practical planning and clear workshop communication.",
     points: ["Service intervals", "Recurring faults", "Downtime priorities"],
   },

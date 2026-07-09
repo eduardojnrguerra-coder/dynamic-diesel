@@ -54,7 +54,7 @@ export function HealthInspectionSection({
 
         <div className="relative overflow-hidden rounded-xl border border-white/10 bg-[#1b1b1b] premium-shadow">
           <Image
-            src="/images/workshop-hero.jpg"
+            src="/images/truck-health-inspection-workshop.webp"
             alt="Dyna-Mic Diesel complimentary truck health inspection"
             width={900}
             height={620}

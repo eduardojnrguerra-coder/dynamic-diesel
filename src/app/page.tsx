@@ -65,55 +65,55 @@ const workshopServices: LinkItem[] = [
   {
     label: "Truck Repairs",
     href: "/truck-repairs-boksburg",
-    image: "/images/truck-repairs.svg",
+    image: "/images/service-truck-repairs-4k.webp",
     description: "Commercial truck repair support from Anderbolt, Boksburg.",
   },
   {
     label: "Truck Servicing",
     href: "/truck-servicing-boksburg",
-    image: "/images/truck-servicing.svg",
+    image: "/images/service-truck-servicing-workshop.webp",
     description: "Minor services, major services and routine maintenance support.",
   },
   {
     label: "Truck Brake Repairs",
     href: "/truck-brake-repairs-boksburg",
-    image: "/images/truck-brake-repairs.svg",
+    image: "/images/service-truck-brake-repairs-4k.webp",
     description: "Truck brake inspections, repairs and maintenance support.",
   },
   {
     label: "Mercedes Actros Engine Reconditioning",
     href: "/mercedes-actros-engine-reconditioning-boksburg",
-    image: "/images/engine-reconditioning.jpg",
+    image: "/images/service-actros-engine-reconditioning-4k.webp",
     description: "Engine reconditioning enquiries for Actros diesel engines.",
   },
   {
     label: "Diesel Diagnostics",
     href: "/diesel-diagnostics-boksburg",
-    image: "/images/diagnostics.jpg",
+    image: "/images/service-diesel-diagnostics-4k.webp",
     description: "Fault finding for warning lights, starting issues and power loss.",
   },
   {
     label: "Diesel Pumps and Injectors",
     href: "/diesel-pumps-and-injectors-boksburg",
-    image: "/images/diesel-injectors.jpg",
+    image: "/images/service-diesel-pumps-injectors-4k.webp",
     description: "Fuel system support for pumps, injectors, smoke and poor economy.",
   },
   {
     label: "Engine Dyno Testing",
     href: "/engine-dyno-testing-boksburg",
-    image: "/images/dyno-testing.jpg",
+    image: "/images/service-engine-dyno-testing-4k.webp",
     description: "Engine testing support for performance and reconditioning work.",
   },
   {
     label: "Fleet Maintenance",
     href: "/fleet-maintenance-boksburg",
-    image: "/images/fleet-maintenance.jpg",
+    image: "/images/service-fleet-maintenance-workshop.webp",
     description: "Planned service support for fleet owners and commercial operators.",
   },
   {
     label: "Request a Quote",
     href: "/request-a-quote#quote-form",
-    image: "/images/mercedes-actros.jpg",
+    image: "/images/service-request-quote-4k.webp",
     description: "Send the truck details, symptoms and service requirements.",
   },
 ];
@@ -239,8 +239,8 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
           <div className="relative min-h-80 overflow-hidden rounded-2xl border border-white/10 premium-shadow">
             <Image
-              src="/images/workshop-hero.jpg"
-              alt="Commercial truck workshop support"
+              src="/images/truck-brands-service-yard.webp"
+              alt="Commercial truck brands serviced by Dyna-Mic Diesel"
               fill
               sizes="(min-width: 1024px) 45vw, 100vw"
               className="object-cover opacity-80"
@@ -362,7 +362,7 @@ export default function Home() {
           <div className="overflow-hidden rounded border border-white/15 bg-white/5 premium-shadow">
             <div className="relative aspect-[16/10]">
               <Image
-                src="/images/fleet-maintenance.jpg"
+                src="/images/service-fleet-maintenance-workshop.webp"
                 alt="Fleet maintenance support at Dyna-Mic Diesel"
                 fill
                 sizes="(min-width: 1024px) 480px, 100vw"

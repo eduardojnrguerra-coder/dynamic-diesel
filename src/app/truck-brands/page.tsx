@@ -108,7 +108,7 @@ export default function TruckBrandsPage() {
 
       <section className="relative overflow-hidden bg-[#111111] py-20 text-white">
         <Image
-          src="/images/fleet-maintenance.jpg"
+          src="/images/service-fleet-maintenance-workshop.webp"
           alt="Truck brand service enquiry"
           fill
           loading="lazy"
