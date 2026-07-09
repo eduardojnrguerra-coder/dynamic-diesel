@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import { SeoPageTemplate } from "@/components/page-template";
-import { commonFaq, type SeoPage } from "@/lib/site";
+import { commonFaq, supportedTruckBrandText, type SeoPage } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Workshop & Services | Dyna-Mic Diesel Boksburg" },
@@ -27,7 +27,7 @@ const page: SeoPage = {
   ],
   proof: [
     "Workshop based in Anderbolt, Boksburg",
-    "Support for Volvo, Scania and Mercedes-Benz trucks",
+    `Support for ${supportedTruckBrandText}`,
     "Call, WhatsApp and quote request options available",
   ],
   faq: commonFaq,

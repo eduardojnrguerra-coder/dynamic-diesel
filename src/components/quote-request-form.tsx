@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import {
   ArrowRight,
   Building2,
@@ -13,7 +10,7 @@ import {
   Phone,
   Truck,
 } from "lucide-react";
-import { business } from "@/lib/site";
+import { business, supportedTruckBrands } from "@/lib/site";
 
 const serviceOptions = [
   "Diagnostics",
@@ -22,15 +19,10 @@ const serviceOptions = [
   "Engine dyno testing",
   "Truck service and maintenance",
   "Fleet maintenance",
-  "Other commercial truck enquiry",
+  "Commercial truck repair enquiry",
 ];
 
-const truckBrandOptions = [
-  "Volvo",
-  "Scania",
-  "Mercedes-Benz",
-  "Other commercial truck brand",
-];
+const truckBrandOptions = [...supportedTruckBrands];
 
 const urgencyOptions = [
   "Urgent - truck is down",
@@ -49,8 +41,6 @@ const quoteDetails = [
 ];
 
 export function QuoteRequestForm() {
-  const [truckBrand, setTruckBrand] = useState("");
-
   return (
     <section id="quote-form" className="scroll-mt-28 bg-[#111111] py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -80,8 +70,6 @@ export function QuoteRequestForm() {
               <SelectField
                 label="Truck brand"
                 name="truckBrand"
-                value={truckBrand}
-                onChange={setTruckBrand}
                 options={truckBrandOptions}
                 placeholder="Select truck brand"
                 required
@@ -115,14 +103,6 @@ export function QuoteRequestForm() {
                 placeholder="Select contact method"
               />
             </div>
-
-            {truckBrand === "Other commercial truck brand" ? (
-              <div className="mt-5 rounded-xl border border-diesel-red/35 bg-diesel-red/10 p-5 text-sm leading-6 text-white/76">
-                Dyna-Mic Diesel specialises in Volvo, Scania and Mercedes-Benz,
-                but may assist with selected other commercial truck brands upon
-                request.
-              </div>
-            ) : null}
 
             <label className="mt-5 grid gap-2 text-sm font-bold text-white">
               Describe the problem or symptoms
@@ -279,16 +259,12 @@ function SelectField({
   options,
   placeholder,
   required,
-  value,
-  onChange,
 }: {
   label: string;
   name: string;
   options: string[];
   placeholder: string;
   required?: boolean;
-  value?: string;
-  onChange?: (value: string) => void;
 }) {
   return (
     <label className="grid gap-2 text-sm font-bold text-white">
@@ -296,8 +272,6 @@ function SelectField({
       <select
         name={name}
         required={required}
-        value={value}
-        onChange={(event) => onChange?.(event.target.value)}
         className="h-12 rounded-xl border border-white/10 bg-[#111111] px-4 text-sm font-normal text-white outline-none transition focus:border-diesel-red"
       >
         <option value="">{placeholder}</option>

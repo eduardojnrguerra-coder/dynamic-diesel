@@ -6,6 +6,7 @@ import { Hero, LinkGrid, PageFrame } from "@/components/site-shell";
 import {
   commonFaq,
   localBusinessSchema,
+  supportedTruckBrandText,
   type LinkItem,
   type SeoPage,
 } from "@/lib/site";
@@ -24,7 +25,7 @@ const page: SeoPage = {
   metaDescription: metadata.description as string,
   h1: "Request a Diesel Truck Repair Quote",
   summary:
-    "Send Dyna-Mic Diesel the truck brand, engine model, symptoms and fleet details so the workshop can respond with the right context.",
+    `Send Dyna-Mic Diesel the truck brand, engine model, symptoms and fleet details so the workshop can respond with the right context. The workshop services and repairs ${supportedTruckBrandText}.`,
   keywords: ["diesel truck repair quote Boksburg", "fleet maintenance quote Boksburg"],
   bullets: ["Truck brand and engine model", "Symptoms and warning lights", "Fleet size and urgency"],
   proof: ["Main conversion page", "Supports call, WhatsApp and email follow-up"],

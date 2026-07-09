@@ -18,6 +18,34 @@ export const business = {
   areaServed: ["Boksburg", "Anderbolt", "East Rand", "Gauteng"],
 };
 
+export const specialistTruckBrands = [
+  "Volvo",
+  "Scania",
+  "Mercedes-Benz",
+  "Mercedes Actros",
+] as const;
+
+export const supportedTruckBrands = [
+  "Volvo",
+  "Scania",
+  "Mercedes-Benz",
+  "MAN",
+  "DAF",
+  "Iveco",
+  "Hino",
+  "Isuzu",
+  "UD Trucks",
+  "FAW",
+  "FUSO",
+  "Renault Trucks",
+] as const;
+
+export const supportedTruckBrandText =
+  "Volvo, Scania, Mercedes-Benz, MAN, DAF, Iveco, Hino, Isuzu, UD Trucks, FAW, FUSO and Renault Trucks";
+
+export const brandPositioning =
+  "Dyna-Mic Diesel services, maintains and repairs Volvo, Scania, Mercedes-Benz, MAN, DAF, Iveco, Hino, Isuzu, UD Trucks, FAW, FUSO and Renault Trucks, with particularly strong specialist experience in Volvo, Scania and Mercedes-Benz trucks.";
+
 export type LinkItem = {
   label: string;
   href: string;
@@ -74,6 +102,7 @@ export const footerPopularServiceLinks: LinkItem[] = [
 ];
 
 export const footerBrandLinks: LinkItem[] = [
+  { label: "All Truck Brands", href: "/truck-brands" },
   { label: "Volvo Truck Repairs", href: "/volvo-truck-repairs-boksburg" },
   { label: "Scania Truck Repairs", href: "/scania-truck-repairs-boksburg" },
   { label: "Mercedes-Benz Truck Repairs", href: "/mercedes-truck-repairs-boksburg" },
@@ -98,6 +127,7 @@ export const commonFaq: Faq[] = [
 ];
 
 const defaultLinks: LinkItem[] = [
+  { label: "Truck Brands", href: "/truck-brands" },
   { label: "Volvo Truck Repairs", href: "/volvo-truck-repairs-boksburg" },
   { label: "Scania Truck Repairs", href: "/scania-truck-repairs-boksburg" },
   { label: "Mercedes-Benz Truck Repairs", href: "/mercedes-truck-repairs-boksburg" },
@@ -403,7 +433,7 @@ export const servicePages: SeoPage[] = [
     title: "Truck Diagnostics",
     metaTitle: "Truck Diagnostics Boksburg | Diesel Truck Fault Finding East Rand",
     metaDescription:
-      "Truck diagnostics in Boksburg for Volvo, Scania and Mercedes-Benz truck repair enquiries.",
+      "Truck diagnostics in Boksburg for confirmed commercial truck brands, with specialist support for Volvo, Scania and Mercedes-Benz repair enquiries.",
     h1: "Truck Diagnostics for East Rand Operators",
     summary:
       "Truck diagnostics help identify fault causes before replacing parts, supporting more practical repair planning for fleets and owner-drivers.",
@@ -413,7 +443,7 @@ export const servicePages: SeoPage[] = [
     faq: [
       {
         question: "Which truck brands does Dyna-Mic Diesel work on?",
-        answer: "Dyna-Mic Diesel works on Volvo, Scania and Mercedes-Benz trucks, including Mercedes Actros enquiries.",
+        answer: brandPositioning,
       },
       {
         question: "Can diagnostics be part of fleet maintenance?",
@@ -671,7 +701,7 @@ export const blogPosts: SeoPage[] = [
           heading: "The Short Answer",
           paragraphs: [
             "A diesel truck that is losing power may have a fuel delivery problem, injector fault, blocked air flow, turbo-related issue, overheating concern, sensor fault or deeper engine wear. The right next step is to note the symptoms and run diagnostics before approving parts replacement.",
-            "For Volvo, Scania and Mercedes-Benz trucks, Dyna-Mic Diesel uses the symptom history, warning lights and service background to guide a practical repair discussion.",
+            "For confirmed commercial truck brands, with specialist depth in Volvo, Scania and Mercedes-Benz, Dyna-Mic Diesel uses the symptom history, warning lights and service background to guide a practical repair discussion.",
           ],
         },
         {
@@ -690,7 +720,7 @@ export const blogPosts: SeoPage[] = [
         {
           heading: "What to Send the Workshop",
           paragraphs: [
-            "When you contact Dyna-Mic Diesel, include the truck brand, model, engine code if known, warning lights, recent repairs, load conditions and whether the vehicle is part of a fleet. Not driving Volvo, Scania or Mercedes-Benz? Contact the workshop and the team will confirm if assistance is possible.",
+            "When you contact Dyna-Mic Diesel, include the truck brand, model, engine code if known, warning lights, recent repairs, load conditions and whether the vehicle is part of a fleet.",
           ],
         },
       ],
@@ -845,7 +875,7 @@ export const blogPosts: SeoPage[] = [
       "Signs a diesel truck engine may need reconditioning, including compression loss, smoke, oil use, overheating and knocking.",
     h1: "When Does a Truck Engine Need Reconditioning?",
     summary:
-      "Engine reconditioning may be considered when wear, compression loss, oil consumption, overheating or mechanical noise point beyond routine repairs.",
+      "Engine reconditioning becomes relevant when wear, compression loss, oil consumption, overheating or mechanical noise point beyond routine repairs.",
     keywords: ["when does a diesel engine need reconditioning", "engine reconditioning Boksburg", "diesel engine reconditioning Boksburg"],
     bullets: ["Compression and oil use symptoms", "Knocking or overheating", "Inspection before repair scope"],
     proof: ["Mercedes Actros OM501 and OM502 focus", "Engine reconditioning quote pathway"],
@@ -1239,6 +1269,14 @@ export function localBusinessSchema() {
       addressCountry: "ZA",
     },
     areaServed: business.areaServed,
+    knowsAbout: [
+      "Diesel truck repairs",
+      "Truck servicing",
+      "Diesel diagnostics",
+      "Engine reconditioning",
+      "Fleet maintenance",
+      ...supportedTruckBrands,
+    ],
     url: siteUrl,
   };
 }

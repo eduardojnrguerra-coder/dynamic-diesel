@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750">
+  <defs><linearGradient id="g" y1="0" y2="1"><stop stop-color="#1b1b1b"/><stop offset="1" stop-color="#0b0b0b"/></linearGradient></defs>
+  <rect width="1200" height="750" fill="url(#g)"/>
+  <circle cx="600" cy="335" r="210" fill="none" stroke="#d8ded7" stroke-width="52"/>
+  <circle cx="600" cy="335" r="84" fill="none" stroke="#38a846" stroke-width="32"/>
+  <path d="M340 505l520-340" stroke="#38a846" stroke-width="34" stroke-linecap="round"/>
+  <path d="M272 610h656" stroke="#fff" stroke-width="18" opacity=".6"/>
+  <text x="150" y="690" fill="#fff" font-family="Arial, sans-serif" font-size="54" font-weight="700">BRAKE REPAIRS</text>
+</svg>

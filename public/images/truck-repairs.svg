@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#101010"/><stop offset="1" stop-color="#233326"/></linearGradient></defs>
+  <rect width="1200" height="750" fill="url(#g)"/>
+  <rect x="120" y="210" width="760" height="270" rx="18" fill="#d9ded7"/>
+  <rect x="235" y="130" width="330" height="210" rx="22" fill="#f4f5ef"/>
+  <rect x="270" y="165" width="210" height="95" rx="10" fill="#1b1b1b"/>
+  <rect x="700" y="270" width="230" height="105" rx="8" fill="#1b1b1b"/>
+  <circle cx="285" cy="515" r="75" fill="#080808"/><circle cx="285" cy="515" r="34" fill="#38a846"/>
+  <circle cx="780" cy="515" r="75" fill="#080808"/><circle cx="780" cy="515" r="34" fill="#38a846"/>
+  <path d="M120 600H1080" stroke="#38a846" stroke-width="12" opacity=".75"/>
+  <text x="120" y="680" fill="#fff" font-family="Arial, sans-serif" font-size="54" font-weight="700">TRUCK REPAIRS</text>
+</svg>

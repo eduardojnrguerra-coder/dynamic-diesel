@@ -6,9 +6,11 @@ import { HealthInspectionSection } from "@/components/health-inspection-section"
 import { Breadcrumbs, FaqSection, JsonLd, SeoSchemas } from "@/components/seo";
 import { ContactButtons, LinkGrid, PageFrame } from "@/components/site-shell";
 import {
+  brandPositioning,
   commonFaq,
   localBusinessSchema,
   quoteHref,
+  supportedTruckBrandText,
   type LinkItem,
 } from "@/lib/site";
 
@@ -24,19 +26,19 @@ const serviceHubLinks: LinkItem[] = [
     label: "Truck Repairs",
     href: "/truck-repairs-boksburg",
     description: "Commercial truck repair support for symptoms, faults and workshop repair planning.",
-    image: "/images/workshop-hero.jpg",
+    image: "/images/truck-repairs.svg",
   },
   {
     label: "Truck Servicing",
     href: "/truck-servicing-boksburg",
     description: "Minor services, major services, routine maintenance and service planning.",
-    image: "/images/workshop-hero.jpg",
+    image: "/images/truck-servicing.svg",
   },
   {
     label: "Truck Brake Repairs",
     href: "/truck-brake-repairs-boksburg",
     description: "Brake inspections, brake repairs and brake maintenance support.",
-    image: "/images/workshop-hero.jpg",
+    image: "/images/truck-brake-repairs.svg",
   },
   {
     label: "Diesel Diagnostics",
@@ -72,7 +74,7 @@ const serviceHubLinks: LinkItem[] = [
     label: "Truck Health Inspection",
     href: "/truck-health-inspection-boksburg",
     description: "Complimentary truck health inspections included with workshop visits.",
-    image: "/images/workshop-hero.jpg",
+    image: "/images/truck-health-inspection.svg",
   },
 ];
 
@@ -159,8 +161,8 @@ export default function ServicesPage() {
               </p>
               <p>
                 With over 30 years of industry experience, our workshop
-                specialises in Volvo, Scania and Mercedes-Benz trucks while also
-                considering selected other commercial truck brands upon request.
+                services, maintains and repairs {supportedTruckBrandText}, with
+                specialist experience in Volvo, Scania and Mercedes-Benz trucks.
               </p>
               <p>
                 Every truck entering our workshop receives a complimentary health
@@ -229,24 +231,23 @@ export default function ServicesPage() {
         <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.16em] text-diesel-red">
-              Selected Other Commercial Trucks
+              Truck Brands Supported
             </p>
             <h2 className="mt-2 text-4xl font-black text-white">
-              Ask the workshop before booking
+              Commercial truck repair support for confirmed brands
             </h2>
           </div>
           <div>
             <p className="text-lg leading-8 text-white/66">
-              Volvo, Scania and Mercedes-Benz trucks remain the main focus.
-              Dyna-Mic Diesel may assist with selected other commercial truck
-              brands depending on the repair requirements, parts availability
-              and workshop scope.
+              {brandPositioning} Use the truck brand pages to find the most
+              relevant repair, servicing, diagnostics, fleet maintenance and
+              quote routes for your vehicle.
             </p>
             <Link
-              href="/contact"
+              href="/truck-brands"
               className="mt-6 inline-flex items-center justify-center rounded bg-diesel-red px-5 py-3 text-sm font-black text-[#111111] transition hover:bg-safety"
             >
-              Ask About Your Truck
+              View Truck Brands
             </Link>
           </div>
         </div>

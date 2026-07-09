@@ -15,7 +15,14 @@ import {
 import { HealthInspectionSection } from "@/components/health-inspection-section";
 import { FaqSection, JsonLd, SeoSchemas } from "@/components/seo";
 import { ContactButtons, Hero, LinkGrid, PageFrame } from "@/components/site-shell";
-import { business, commonFaq, localBusinessSchema, type LinkItem } from "@/lib/site";
+import {
+  brandPositioning,
+  business,
+  commonFaq,
+  localBusinessSchema,
+  supportedTruckBrandText,
+  type LinkItem,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Dyna-Mic Diesel | Truck Repairs, Servicing & Maintenance Boksburg" },
@@ -29,7 +36,7 @@ const homeFaq = [
   {
     question: "Which truck brands does Dyna-Mic Diesel work on?",
     answer:
-      "Dyna-Mic Diesel specialises in Volvo, Scania and Mercedes-Benz trucks, including Mercedes Actros repair and engine reconditioning enquiries. The workshop may assist with selected other commercial truck brands upon request.",
+      "Dyna-Mic Diesel services, maintains and repairs Volvo, Scania, Mercedes-Benz, MAN, DAF, Iveco, Hino, Isuzu, UD Trucks, FAW, FUSO and Renault Trucks, with particularly strong experience in Volvo, Scania and Mercedes-Benz trucks.",
   },
 ];
 
@@ -58,19 +65,19 @@ const workshopServices: LinkItem[] = [
   {
     label: "Truck Repairs",
     href: "/truck-repairs-boksburg",
-    image: "/images/workshop-hero.jpg",
+    image: "/images/truck-repairs.svg",
     description: "Commercial truck repair support from Anderbolt, Boksburg.",
   },
   {
     label: "Truck Servicing",
     href: "/truck-servicing-boksburg",
-    image: "/images/workshop-hero.jpg",
+    image: "/images/truck-servicing.svg",
     description: "Minor services, major services and routine maintenance support.",
   },
   {
     label: "Truck Brake Repairs",
     href: "/truck-brake-repairs-boksburg",
-    image: "/images/workshop-hero.jpg",
+    image: "/images/truck-brake-repairs.svg",
     description: "Truck brake inspections, repairs and maintenance support.",
   },
   {
@@ -149,7 +156,7 @@ export default function Home() {
       <SeoSchemas faq={homeFaq} breadcrumbs={[{ label: "Home", href: "/" }]} />
       <Hero
         h1="Diesel Truck Repairs, Diagnostics & Engine Reconditioning in Boksburg"
-        summary={`${business.name} is a full-service commercial truck repair, servicing and maintenance workshop in Anderbolt, Boksburg, specialising in Volvo, Scania and Mercedes-Benz trucks while considering selected other commercial truck brands upon request.`}
+        summary={`${business.name} is a full-service commercial truck repair, servicing and maintenance workshop in Anderbolt, Boksburg. The workshop services, maintains and repairs ${supportedTruckBrandText}, with particularly strong specialist experience in Volvo, Scania and Mercedes-Benz trucks.`}
       />
 
       <section className="border-b border-white/10 bg-[#1b1b1b] py-24">
@@ -214,11 +221,11 @@ export default function Home() {
               Specialist Support for Volvo, Scania & Mercedes-Benz Trucks
             </h2>
             <p className="mt-5 text-lg leading-8 text-white/64">
-              These are the core truck brands Dyna-Mic Diesel focuses on daily,
-              with additional commercial vehicle support available upon request.
-              Bring the symptoms, warning lights, engine code if known and
-              service history, and the workshop can discuss the next sensible
-              step.
+              Volvo, Scania and Mercedes-Benz are specialist strengths at
+              Dyna-Mic Diesel. The workshop also actively services and repairs
+              the wider confirmed commercial truck range, with practical
+              diagnostics, servicing and repair planning for operators across
+              Boksburg, the East Rand and Gauteng.
             </p>
             <div className="mt-7">
               <ContactButtons />
@@ -242,23 +249,21 @@ export default function Home() {
           </div>
           <div className="flex flex-col justify-center rounded-2xl border border-white/10 bg-white/[0.035] p-8 lg:p-10">
             <p className="text-sm font-black uppercase tracking-[0.16em] text-diesel-red">
-              Other Commercial Trucks
+              Truck Brands We Service
             </p>
             <h2 className="mt-3 text-4xl font-black leading-tight text-white">
-              Not sure if we can help with your truck?
+              Full-service support for confirmed commercial truck brands
             </h2>
             <p className="mt-5 text-lg leading-8 text-white/64">
-              While Volvo, Scania and Mercedes-Benz remain our main focus,
-              Dyna-Mic Diesel may also assist with selected other truck brands
-              depending on the repair, parts availability and workshop
-              requirements. If you operate another commercial vehicle brand,
-              contact us and our team will advise whether we can assist.
+              {brandPositioning} Share the truck brand, model, symptoms,
+              warning lights and service history so the workshop can understand
+              the repair or maintenance requirement properly.
             </p>
             <Link
-              href="/contact"
+              href="/truck-brands"
               className="mt-7 inline-flex h-13 w-fit items-center justify-center gap-2 rounded bg-diesel-red px-6 text-sm font-black text-[#111111] transition hover:-translate-y-0.5 hover:bg-safety"
             >
-              Ask About Your Truck <ArrowRight size={18} />
+              View Truck Brands <ArrowRight size={18} />
             </Link>
           </div>
         </div>
@@ -457,7 +462,7 @@ export default function Home() {
               warning lights, engine code if known and fleet details.
             </p>
             <p className="mt-3 max-w-2xl text-sm leading-6 text-white/56">
-              Not driving Volvo, Scania or Mercedes? Contact us and we&apos;ll confirm if we can assist.
+              Dyna-Mic Diesel services and repairs {supportedTruckBrandText}.
             </p>
           </div>
           <ContactButtons />

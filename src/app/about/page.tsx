@@ -15,10 +15,12 @@ import { HealthInspectionSection } from "@/components/health-inspection-section"
 import { Breadcrumbs, FaqSection, JsonLd, SeoSchemas } from "@/components/seo";
 import { ContactButtons, LinkGrid, PageFrame } from "@/components/site-shell";
 import {
+  brandPositioning,
   business,
   commonFaq,
   localBusinessSchema,
   quoteHref,
+  supportedTruckBrandText,
   type LinkItem,
 } from "@/lib/site";
 
@@ -83,13 +85,13 @@ const serviceCards: LinkItem[] = [
     label: "Truck Servicing & Repairs",
     href: "/truck-servicing-boksburg",
     description: "Truck servicing, maintenance and repair planning from the Anderbolt workshop.",
-    image: "/images/workshop-hero.jpg",
+    image: "/images/truck-servicing.svg",
   },
   {
     label: "Preventative Maintenance",
     href: "/preventative-truck-maintenance-boksburg",
     description: "Maintenance planning that helps identify service needs and repeat faults earlier.",
-    image: "/images/fleet-maintenance.jpg",
+    image: "/images/truck-health-inspection.svg",
   },
   {
     label: "Fleet Maintenance",
@@ -206,10 +208,10 @@ export default function AboutPage() {
             <p className="reveal-up-delay mt-5 max-w-3xl text-base leading-7 text-white/64">
               Based in Anderbolt, Boksburg, our workshop provides practical
               truck repair solutions for customers across the East Rand and
-              surrounding Gauteng areas. With a primary focus on Volvo, Scania
-              and Mercedes-Benz trucks, including Mercedes Actros models, our
-              team also considers selected other commercial truck enquiries upon
-              request.
+              surrounding Gauteng areas. The workshop services, maintains and
+              repairs {supportedTruckBrandText}, with particularly strong
+              experience in Volvo, Scania and Mercedes-Benz trucks, including
+              Mercedes Actros models.
             </p>
             <div className="reveal-up-delay mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -345,13 +347,13 @@ export default function AboutPage() {
               Specialist Support for Volvo, Scania & Mercedes-Benz Trucks
             </h2>
             <p className="mt-5 text-lg leading-8 text-white/66">
-              Dyna-Mic Diesel&apos;s primary truck brand focus includes Volvo,
-              Scania and Mercedes-Benz commercial vehicles. Our workshop
-              provides repair, diagnostic, maintenance and engine support based
-              on the requirements of the vehicle and the work needed. For
-              Mercedes-Benz operators, our services also include support
-              relating to Mercedes Actros trucks and engine reconditioning
-              requirements.
+              Dyna-Mic Diesel has particularly strong specialist experience
+              with Volvo, Scania and Mercedes-Benz commercial vehicles. Our
+              workshop provides repair, diagnostic, maintenance and engine
+              support based on the requirements of the vehicle and the work
+              needed. For Mercedes-Benz operators, our services also include
+              support relating to Mercedes Actros trucks and engine
+              reconditioning requirements.
             </p>
           </div>
           <div className="mt-10">
@@ -359,20 +361,19 @@ export default function AboutPage() {
           </div>
           <div className="mt-10 rounded-xl border border-white/10 bg-[#1b1b1b] p-7 premium-shadow">
             <h3 className="text-3xl font-black text-white">
-              Operating Another Commercial Truck Brand?
+              Commercial Truck Brands Serviced
             </h3>
             <p className="mt-4 max-w-4xl leading-7 text-white/64">
-              While Volvo, Scania and Mercedes-Benz remain our primary focus,
-              Dyna-Mic Diesel may assist with selected other commercial truck
-              brands depending on the repair requirements and work involved.
-              Contact the workshop with your truck details and the team can
-              advise whether assistance is available.
+              {brandPositioning} This gives truck owners, fleet operators and
+              transport businesses a practical workshop route for servicing,
+              diagnostics, maintenance and repairs across the confirmed brand
+              range.
             </p>
             <Link
-              href="/contact"
+              href="/truck-brands"
               className="mt-6 inline-flex items-center gap-2 rounded bg-diesel-red px-5 py-3 text-sm font-black text-[#111111] transition hover:bg-safety"
             >
-              Ask About Your Truck <ArrowRight size={17} />
+              View Truck Brands <ArrowRight size={17} />
             </Link>
           </div>
         </div>
@@ -599,9 +600,7 @@ export default function AboutPage() {
             Request a Quote <ArrowRight size={18} />
           </Link>
           <p className="mt-5 max-w-2xl text-sm leading-6 text-white/56">
-            Not operating a Volvo, Scania or Mercedes-Benz truck? Contact us
-            with your vehicle details and we&apos;ll advise whether we can
-            assist.
+            Dyna-Mic Diesel services, maintains and repairs {supportedTruckBrandText}.
           </p>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { ContactButtons, PageFrame } from "@/components/site-shell";
+import { supportedTruckBrandText } from "@/lib/site";
 
 export default function NotFound() {
   return (
@@ -15,8 +16,8 @@ export default function NotFound() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70">
             The page may have moved, but you can still contact Dyna-Mic Diesel
-            for Volvo, Scania and Mercedes-Benz truck repair enquiries in
-            Boksburg and the East Rand.
+            for truck repair enquiries in Boksburg and the East Rand. The
+            workshop services and repairs {supportedTruckBrandText}.
           </p>
           <div className="mt-8">
             <ContactButtons />

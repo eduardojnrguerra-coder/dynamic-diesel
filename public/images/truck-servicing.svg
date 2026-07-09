@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750">
+  <defs><radialGradient id="g" cx=".7" cy=".3"><stop stop-color="#2f5d37"/><stop offset="1" stop-color="#111"/></radialGradient></defs>
+  <rect width="1200" height="750" fill="url(#g)"/>
+  <circle cx="610" cy="330" r="170" fill="none" stroke="#38a846" stroke-width="42"/>
+  <path d="M610 160v95M610 405v95M440 330h95M685 330h95" stroke="#f7f7f2" stroke-width="34" stroke-linecap="round"/>
+  <rect x="155" y="490" width="890" height="68" rx="12" fill="#f7f7f2" opacity=".9"/>
+  <rect x="155" y="585" width="610" height="28" rx="8" fill="#38a846"/>
+  <text x="150" y="680" fill="#fff" font-family="Arial, sans-serif" font-size="54" font-weight="700">TRUCK SERVICING</text>
+</svg>

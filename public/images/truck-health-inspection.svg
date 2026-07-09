@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750">
+  <rect width="1200" height="750" fill="#111"/>
+  <path d="M600 105l310 115v190c0 155-105 260-310 340-205-80-310-185-310-340V220z" fill="#1b1b1b" stroke="#38a846" stroke-width="24"/>
+  <path d="M470 370l88 88 180-205" fill="none" stroke="#38a846" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="180" y="590" width="840" height="44" rx="12" fill="#f7f7f2" opacity=".86"/>
+  <text x="170" y="690" fill="#fff" font-family="Arial, sans-serif" font-size="50" font-weight="700">HEALTH INSPECTION</text>
+</svg>

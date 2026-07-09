@@ -5,6 +5,7 @@ import { HealthInspectionSection } from "@/components/health-inspection-section"
 import { Breadcrumbs, FaqSection, JsonLd, SeoSchemas } from "@/components/seo";
 import { ContactButtons, LinkGrid, PageFrame } from "@/components/site-shell";
 import {
+  brandPositioning,
   business,
   localBusinessSchema,
   quoteHref,
@@ -157,15 +158,15 @@ export function ServiceLandingPage({ page }: { page: ServiceLandingPageData }) {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <p className="text-sm font-black uppercase tracking-[0.16em] text-diesel-red">
-              Truck Brand Focus
+              Truck Brand Support
             </p>
             <h2 className="mt-2 text-4xl font-black text-white">
-              Volvo, Scania and Mercedes-Benz support
+              Specialist experience plus confirmed brand coverage
             </h2>
             <p className="mt-4 max-w-3xl leading-7 text-white/62">
-              Dyna-Mic Diesel specialises in Volvo, Scania and Mercedes-Benz
-              trucks, including Mercedes Actros, while considering selected other
-              commercial truck brands upon request.
+              {brandPositioning} Volvo, Scania and Mercedes-Benz remain key
+              specialist strengths, while the workshop also actively supports
+              the full confirmed commercial truck range.
             </p>
           </div>
           <LinkGrid links={brandLinks} />

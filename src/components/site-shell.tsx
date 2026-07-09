@@ -19,6 +19,7 @@ import {
   footerPopularServiceLinks,
   primaryLinks,
   quoteHref,
+  supportedTruckBrandText,
   type LinkItem,
 } from "@/lib/site";
 
@@ -207,8 +208,8 @@ export function Footer() {
             ))}
           </div>
           <p className="mt-7 text-sm leading-6 text-white/52">
-            Focused on Volvo, Scania and Mercedes-Benz trucks, with selected
-            other commercial truck enquiries considered upon request.
+            Specialist experience with Volvo, Scania and Mercedes-Benz trucks,
+            with service, maintenance and repairs for {supportedTruckBrandText}.
           </p>
         </div>
 
@@ -330,7 +331,7 @@ export function Hero({
             <ContactButtons />
           </div>
           <p className="reveal-up-delay mt-4 max-w-2xl text-sm leading-6 text-white/56">
-            Not driving Volvo, Scania or Mercedes? Contact us and we&apos;ll confirm if we can assist.
+            Workshop support for {supportedTruckBrandText}.
           </p>
         </div>
       </div>

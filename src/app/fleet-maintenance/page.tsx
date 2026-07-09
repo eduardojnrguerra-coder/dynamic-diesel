@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { HealthInspectionSection } from "@/components/health-inspection-section";
 import { SeoPageTemplate } from "@/components/page-template";
-import { commonFaq, type SeoPage } from "@/lib/site";
+import { commonFaq, supportedTruckBrandText, type SeoPage } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Fleet Maintenance Boksburg | Diesel Truck Fleet Quotes",
@@ -17,7 +17,7 @@ const page: SeoPage = {
   metaDescription: metadata.description as string,
   h1: "Fleet Maintenance for Diesel Trucks in Boksburg",
   summary:
-    "Fleet operators can request planned maintenance support by sharing vehicle count, brands, engine models, recurring faults and service priorities.",
+    `Fleet operators can request planned maintenance support by sharing vehicle count, brands, engine models, recurring faults and service priorities. Dyna-Mic Diesel supports ${supportedTruckBrandText}.`,
   keywords: ["fleet maintenance Boksburg", "truck services Boksburg", "commercial vehicle repairs Boksburg"],
   bullets: ["Fleet quote request path", "Vehicle count and brand capture", "Service and repair planning"],
   proof: ["Main conversion goal for the website", "Local support for East Rand and Gauteng operators"],

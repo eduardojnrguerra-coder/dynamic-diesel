@@ -11,7 +11,13 @@ import {
 } from "lucide-react";
 import { Breadcrumbs, JsonLd, SeoSchemas } from "@/components/seo";
 import { ContactButtons, Hero, PageFrame } from "@/components/site-shell";
-import { business, commonFaq, localBusinessSchema, type LinkItem } from "@/lib/site";
+import {
+  business,
+  commonFaq,
+  localBusinessSchema,
+  supportedTruckBrandText,
+  type LinkItem,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Contact Dyna-Mic Diesel | Truck Repairs Boksburg" },
@@ -47,7 +53,7 @@ export default function ContactPage() {
       <Hero
         eyebrow="Contact Dyna-Mic Diesel"
         h1="Contact Dyna-Mic Diesel"
-        summary="Call, WhatsApp or email the workshop for diesel truck repairs, diagnostics, engine reconditioning, servicing or fleet maintenance support in Boksburg and the East Rand."
+        summary={`Call, WhatsApp or email the workshop for diesel truck repairs, diagnostics, engine reconditioning, servicing or fleet maintenance support in Boksburg and the East Rand. Dyna-Mic Diesel services and repairs ${supportedTruckBrandText}.`}
       />
 
       <section className="bg-background py-20">

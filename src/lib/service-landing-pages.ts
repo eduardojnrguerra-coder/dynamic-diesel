@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { business, quoteHref, siteUrl, type Faq, type LinkItem } from "@/lib/site";
+import {
+  brandPositioning,
+  business,
+  quoteHref,
+  siteUrl,
+  type Faq,
+  type LinkItem,
+} from "@/lib/site";
 
 export type ServiceLandingPageData = {
   slug: string;
@@ -39,7 +46,7 @@ export const serviceLandingPages: ServiceLandingPageData[] = [
     title: "Truck Repairs Boksburg",
     seoTitle: "Truck Repairs Boksburg | Commercial Truck Workshop",
     metaDescription:
-      "Truck repairs in Boksburg from Dyna-Mic Diesel. Commercial truck repair support for Volvo, Scania and Mercedes-Benz trucks with complimentary truck health inspections.",
+      "Truck repairs in Boksburg from Dyna-Mic Diesel. Commercial truck repair support for confirmed truck brands with complimentary truck health inspections.",
     h1: "Truck Repairs in Boksburg",
     eyebrow: "Commercial truck repairs",
     intro:
@@ -65,20 +72,20 @@ export const serviceLandingPages: ServiceLandingPageData[] = [
       "Include a complimentary truck health inspection with the workshop visit.",
     ],
     relatedServices: [
-      { label: "Truck Servicing", href: "/truck-servicing-boksburg", image: "/images/workshop-hero.jpg" },
+      { label: "Truck Servicing", href: "/truck-servicing-boksburg", image: "/images/truck-servicing.svg" },
       { label: "Diesel Diagnostics", href: "/diesel-diagnostics-boksburg", image: "/images/diagnostics.jpg" },
-      { label: "Truck Brake Repairs", href: "/truck-brake-repairs-boksburg", image: "/images/workshop-hero.jpg" },
+      { label: "Truck Brake Repairs", href: "/truck-brake-repairs-boksburg", image: "/images/truck-brake-repairs.svg" },
       { label: "Request a Quote", href: quoteHref, image: "/images/mercedes-actros.jpg" },
     ],
     faqs: [
       commonAreaFaq,
       {
-        question: "Which truck brands are the main focus?",
+        question: "Which truck brands does Dyna-Mic Diesel service and repair?",
         answer:
-          "Dyna-Mic Diesel specialises in Volvo, Scania and Mercedes-Benz trucks, including Mercedes Actros, while considering selected other commercial truck brands upon request.",
+          brandPositioning,
       },
     ],
-    image: "/images/workshop-hero.jpg",
+    image: "/images/truck-repairs.svg",
   },
   {
     slug: "truck-servicing-boksburg",
@@ -92,7 +99,7 @@ export const serviceLandingPages: ServiceLandingPageData[] = [
     intro:
       "Dyna-Mic Diesel provides truck servicing and maintenance support for commercial vehicle operators from Anderbolt, Boksburg.",
     immediateAnswer:
-      "The workshop can assist with minor services, major services, routine maintenance and preventative maintenance planning for Volvo, Scania and Mercedes-Benz trucks.",
+      "The workshop can assist with minor services, major services, routine maintenance and preventative maintenance planning for confirmed commercial truck brands, with specialist experience in Volvo, Scania and Mercedes-Benz trucks.",
     serviceExplanation:
       "Regular truck servicing helps operators understand vehicle condition, identify maintenance needs and plan repairs before small issues become more disruptive.",
     signs: [
@@ -112,10 +119,10 @@ export const serviceLandingPages: ServiceLandingPageData[] = [
       "Help the customer understand follow-up maintenance priorities.",
     ],
     relatedServices: [
-      { label: "Truck Brake Repairs", href: "/truck-brake-repairs-boksburg", image: "/images/workshop-hero.jpg" },
+      { label: "Truck Brake Repairs", href: "/truck-brake-repairs-boksburg", image: "/images/truck-brake-repairs.svg" },
       { label: "Preventative Maintenance", href: "/preventative-truck-maintenance-boksburg", image: "/images/fleet-maintenance.jpg" },
       { label: "Fleet Maintenance", href: "/fleet-maintenance-boksburg", image: "/images/fleet-maintenance.jpg" },
-      { label: "Truck Health Inspection", href: "/truck-health-inspection-boksburg", image: "/images/workshop-hero.jpg" },
+      { label: "Truck Health Inspection", href: "/truck-health-inspection-boksburg", image: "/images/truck-health-inspection.svg" },
     ],
     faqs: [
       commonAreaFaq,
@@ -125,7 +132,7 @@ export const serviceLandingPages: ServiceLandingPageData[] = [
           "Yes. Every truck brought into Dyna-Mic Diesel receives a complimentary health inspection to help identify potential maintenance concerns.",
       },
     ],
-    image: "/images/workshop-hero.jpg",
+    image: "/images/truck-servicing.svg",
   },
   {
     slug: "truck-brake-repairs-boksburg",
@@ -159,7 +166,7 @@ export const serviceLandingPages: ServiceLandingPageData[] = [
       "Perform a complimentary general truck health inspection during the visit.",
     ],
     relatedServices: [
-      { label: "Truck Servicing", href: "/truck-servicing-boksburg", image: "/images/workshop-hero.jpg" },
+      { label: "Truck Servicing", href: "/truck-servicing-boksburg", image: "/images/truck-servicing.svg" },
       { label: "Preventative Maintenance", href: "/preventative-truck-maintenance-boksburg", image: "/images/fleet-maintenance.jpg" },
       { label: "Fleet Maintenance", href: "/fleet-maintenance-boksburg", image: "/images/fleet-maintenance.jpg" },
       { label: "Diesel Diagnostics", href: "/diesel-diagnostics-boksburg", image: "/images/diagnostics.jpg" },
@@ -179,7 +186,7 @@ export const serviceLandingPages: ServiceLandingPageData[] = [
           "Yes. Even when a truck is booked in for brake work, Dyna-Mic Diesel also performs a complimentary general health inspection to help identify other potential maintenance concerns.",
       },
     ],
-    image: "/images/workshop-hero.jpg",
+    image: "/images/truck-brake-repairs.svg",
   },
   {
     slug: "diesel-diagnostics-boksburg",
@@ -213,7 +220,7 @@ export const serviceLandingPages: ServiceLandingPageData[] = [
       "Include the complimentary truck health inspection during the visit.",
     ],
     relatedServices: [
-      { label: "Truck Repairs", href: "/truck-repairs-boksburg", image: "/images/workshop-hero.jpg" },
+      { label: "Truck Repairs", href: "/truck-repairs-boksburg", image: "/images/truck-repairs.svg" },
       { label: "Diesel Pumps & Injectors", href: "/diesel-pumps-and-injectors-boksburg", image: "/images/diesel-injectors.jpg" },
       { label: "Engine Reconditioning", href: "/engine-reconditioning-boksburg", image: "/images/engine-reconditioning.jpg" },
       { label: "Engine Dyno Testing", href: "/engine-dyno-testing-boksburg", image: "/images/dyno-testing.jpg" },
@@ -309,9 +316,9 @@ export const serviceLandingPages: ServiceLandingPageData[] = [
     ],
     relatedServices: [
       { label: "Diesel Diagnostics", href: "/diesel-diagnostics-boksburg", image: "/images/diagnostics.jpg" },
-      { label: "Truck Repairs", href: "/truck-repairs-boksburg", image: "/images/workshop-hero.jpg" },
+      { label: "Truck Repairs", href: "/truck-repairs-boksburg", image: "/images/truck-repairs.svg" },
       { label: "Engine Reconditioning", href: "/engine-reconditioning-boksburg", image: "/images/engine-reconditioning.jpg" },
-      { label: "Truck Servicing", href: "/truck-servicing-boksburg", image: "/images/workshop-hero.jpg" },
+      { label: "Truck Servicing", href: "/truck-servicing-boksburg", image: "/images/truck-servicing.svg" },
     ],
     faqs: [
       commonAreaFaq,
@@ -400,9 +407,9 @@ export const serviceLandingPages: ServiceLandingPageData[] = [
     ],
     relatedServices: [
       { label: "Preventative Maintenance", href: "/preventative-truck-maintenance-boksburg", image: "/images/fleet-maintenance.jpg" },
-      { label: "Truck Servicing", href: "/truck-servicing-boksburg", image: "/images/workshop-hero.jpg" },
-      { label: "Truck Repairs", href: "/truck-repairs-boksburg", image: "/images/workshop-hero.jpg" },
-      { label: "Truck Health Inspection", href: "/truck-health-inspection-boksburg", image: "/images/workshop-hero.jpg" },
+      { label: "Truck Servicing", href: "/truck-servicing-boksburg", image: "/images/truck-servicing.svg" },
+      { label: "Truck Repairs", href: "/truck-repairs-boksburg", image: "/images/truck-repairs.svg" },
+      { label: "Truck Health Inspection", href: "/truck-health-inspection-boksburg", image: "/images/truck-health-inspection.svg" },
     ],
     faqs: [
       commonAreaFaq,
@@ -445,10 +452,10 @@ export const serviceLandingPages: ServiceLandingPageData[] = [
       "Use the complimentary health inspection to add condition awareness.",
     ],
     relatedServices: [
-      { label: "Truck Servicing", href: "/truck-servicing-boksburg", image: "/images/workshop-hero.jpg" },
+      { label: "Truck Servicing", href: "/truck-servicing-boksburg", image: "/images/truck-servicing.svg" },
       { label: "Fleet Maintenance", href: "/fleet-maintenance-boksburg", image: "/images/fleet-maintenance.jpg" },
-      { label: "Truck Brake Repairs", href: "/truck-brake-repairs-boksburg", image: "/images/workshop-hero.jpg" },
-      { label: "Truck Health Inspection", href: "/truck-health-inspection-boksburg", image: "/images/workshop-hero.jpg" },
+      { label: "Truck Brake Repairs", href: "/truck-brake-repairs-boksburg", image: "/images/truck-brake-repairs.svg" },
+      { label: "Truck Health Inspection", href: "/truck-health-inspection-boksburg", image: "/images/truck-health-inspection.svg" },
     ],
     faqs: [
       commonAreaFaq,
@@ -492,8 +499,8 @@ export const serviceLandingPages: ServiceLandingPageData[] = [
       "Avoid claiming that every fault will be detected or every breakdown prevented.",
     ],
     relatedServices: [
-      { label: "Truck Servicing", href: "/truck-servicing-boksburg", image: "/images/workshop-hero.jpg" },
-      { label: "Truck Brake Repairs", href: "/truck-brake-repairs-boksburg", image: "/images/workshop-hero.jpg" },
+      { label: "Truck Servicing", href: "/truck-servicing-boksburg", image: "/images/truck-servicing.svg" },
+      { label: "Truck Brake Repairs", href: "/truck-brake-repairs-boksburg", image: "/images/truck-brake-repairs.svg" },
       { label: "Preventative Maintenance", href: "/preventative-truck-maintenance-boksburg", image: "/images/fleet-maintenance.jpg" },
       { label: "Fleet Maintenance", href: "/fleet-maintenance-boksburg", image: "/images/fleet-maintenance.jpg" },
     ],
@@ -510,7 +517,7 @@ export const serviceLandingPages: ServiceLandingPageData[] = [
           "No. It is included when a truck is brought into Dyna-Mic Diesel for a workshop service.",
       },
     ],
-    image: "/images/workshop-hero.jpg",
+    image: "/images/truck-health-inspection.svg",
   },
 ];
 

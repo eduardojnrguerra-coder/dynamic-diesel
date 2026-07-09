@@ -8,6 +8,7 @@ import {
   siteUrl,
 } from "@/lib/site";
 import { serviceLandingPages } from "@/lib/service-landing-pages";
+import { additionalTruckBrandPages } from "@/lib/truck-brand-pages";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const confirmedBrandSlugs = new Set([
@@ -20,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/about",
     "/services",
+    "/truck-brands",
     "/volvo-truck-repairs-boksburg",
     "/scania-truck-repairs-boksburg",
     "/mercedes-truck-repairs-boksburg",
@@ -37,6 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const highPriorityRoutes = new Set([
     "",
+    "/truck-brands",
     "/volvo-truck-repairs-boksburg",
     "/scania-truck-repairs-boksburg",
     "/mercedes-truck-repairs-boksburg",
@@ -59,6 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const dynamicRoutes = [
     ...servicePages.map((page) => `/services/${page.slug}`),
+    ...additionalTruckBrandPages.map((page) => page.href),
     ...brandPages
       .filter((page) => confirmedBrandSlugs.has(page.slug))
       .map((page) => `/brands/${page.slug}`),
