@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import {
   ArrowRight,
   ChevronDown,
-  Globe2,
   Mail,
   MapPin,
   Menu,
@@ -14,7 +13,14 @@ import {
   Phone,
   X,
 } from "lucide-react";
-import { business, footerServiceLinks, primaryLinks, quoteHref, type LinkItem } from "@/lib/site";
+import {
+  business,
+  footerBrandLinks,
+  footerPopularServiceLinks,
+  primaryLinks,
+  quoteHref,
+  type LinkItem,
+} from "@/lib/site";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -145,7 +151,7 @@ function IconLink({
 export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#0b0b0b] text-white">
-      <div className="mx-auto grid max-w-[1480px] gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] lg:px-10">
+      <div className="mx-auto grid max-w-[1480px] gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 lg:grid-cols-[1.25fr_0.65fr_0.9fr_0.95fr_1.1fr] lg:px-10">
         <div>
           <Image
             src="/images/dyna-mic-diesel-logo.png"
@@ -162,6 +168,7 @@ export function Footer() {
             <ContactButtons compact />
           </div>
         </div>
+
         <div>
           <p className="text-sm font-black uppercase tracking-[0.16em] text-diesel-red">
             Navigation
@@ -173,17 +180,38 @@ export function Footer() {
               </Link>
             ))}
           </div>
-          <p className="mt-8 text-sm font-black uppercase tracking-[0.16em] text-diesel-red">
-            Key Services
+        </div>
+
+        <div>
+          <p className="text-sm font-black uppercase tracking-[0.16em] text-diesel-red">
+            Popular Services
           </p>
           <div className="mt-5 grid gap-3 text-sm text-white/65">
-            {footerServiceLinks.map((link) => (
+            {footerPopularServiceLinks.map((link) => (
               <Link key={link.href} href={link.href} className="transition hover:text-white">
                 {link.label}
               </Link>
             ))}
           </div>
         </div>
+
+        <div>
+          <p className="text-sm font-black uppercase tracking-[0.16em] text-diesel-red">
+            Truck Brands
+          </p>
+          <div className="mt-5 grid gap-3 text-sm text-white/65">
+            {footerBrandLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="transition hover:text-white">
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <p className="mt-7 text-sm leading-6 text-white/52">
+            Focused on Volvo, Scania and Mercedes-Benz trucks, with selected
+            other commercial truck enquiries considered upon request.
+          </p>
+        </div>
+
         <div>
           <p className="text-sm font-black uppercase tracking-[0.16em] text-diesel-red">
             Contact
@@ -192,6 +220,9 @@ export function Footer() {
             <a className="flex items-center gap-3 hover:text-white" href={business.phoneHref}>
               <Phone size={16} /> {business.phone}
             </a>
+            <a className="flex items-center gap-3 hover:text-white" href={business.whatsappHref}>
+              <MessageCircle size={16} /> WhatsApp
+            </a>
             <a className="flex items-center gap-3 hover:text-white" href={business.emailHref}>
               <Mail size={16} /> {business.email}
             </a>
@@ -199,22 +230,7 @@ export function Footer() {
               <MapPin size={16} className="mt-1 shrink-0" /> {business.address}
             </a>
           </div>
-          <div className="mt-6 flex gap-3">
-            {[Globe2, MessageCircle, Phone].map((Icon, index) => (
-              <span
-                key={index}
-                className="flex size-10 items-center justify-center rounded border border-white/10 bg-white/5 text-white/70"
-              >
-                <Icon size={17} aria-hidden="true" />
-              </span>
-            ))}
-          </div>
-        </div>
-        <div>
-          <p className="text-sm font-black uppercase tracking-[0.16em] text-diesel-red">
-            Service Areas
-          </p>
-          <div className="mt-5 grid grid-cols-2 gap-2">
+          <div className="mt-6 grid grid-cols-2 gap-2">
             {business.areaServed.map((area) => (
               <span
                 key={area}
@@ -226,9 +242,9 @@ export function Footer() {
           </div>
           <a
             href={business.mapHref}
-            className="mt-6 flex min-h-32 items-center justify-center rounded border border-white/10 bg-white/5 p-4 text-center text-sm font-bold text-white/68 transition hover:border-diesel-red hover:text-diesel-red"
+            className="mt-5 flex min-h-24 items-center justify-center rounded border border-white/10 bg-white/5 p-4 text-center text-sm font-bold text-white/68 transition hover:border-diesel-red hover:text-diesel-red"
           >
-            Google Map
+            Get Directions
             <br />
             Unit 7, The Avenues
           </a>
@@ -266,7 +282,7 @@ export function ContactButtons({ compact = false }: { compact?: boolean }) {
           data-conversion="quote-click"
           className={`${base} border border-white/12 bg-white/8 text-white hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/12`}
         >
-          Fleet Quote <ArrowRight size={18} aria-hidden="true" />
+          Request Quote <ArrowRight size={18} aria-hidden="true" />
         </Link>
       ) : null}
     </div>
@@ -354,10 +370,14 @@ export function LinkGrid({ links }: { links: LinkItem[] }) {
               {link.description ? (
                 <span className="mt-3 block text-sm leading-6 text-white/60">{link.description}</span>
               ) : null}
+              <span className="mt-5 inline-flex items-center gap-2 text-sm font-black text-diesel-red">
+                Learn More
+                <ArrowRight size={16} aria-hidden="true" />
+              </span>
             </div>
             <ArrowRight
               size={22}
-              className="shrink-0 text-diesel-red transition group-hover:translate-x-1"
+              className="hidden shrink-0 text-diesel-red transition group-hover:translate-x-1 sm:block"
             />
           </div>
         </Link>

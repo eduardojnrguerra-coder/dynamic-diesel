@@ -82,9 +82,11 @@ const warningSigns = [
 
 const relatedServices: LinkItem[] = [
   { label: "Mercedes-Benz Truck Repairs", href: "/mercedes-truck-repairs-boksburg" },
-  { label: "Diesel Diagnostics", href: "/services/diesel-engine-diagnostics" },
-  { label: "Diesel Pumps and Injectors", href: "/services/diesel-pumps-and-injectors" },
-  { label: "Engine Dyno Testing", href: "/services/engine-dyno-testing" },
+  { label: "Engine Reconditioning", href: "/engine-reconditioning-boksburg" },
+  { label: "Diesel Diagnostics", href: "/diesel-diagnostics-boksburg" },
+  { label: "Diesel Pumps and Injectors", href: "/diesel-pumps-and-injectors-boksburg" },
+  { label: "Engine Dyno Testing", href: "/engine-dyno-testing-boksburg" },
+  { label: "Truck Health Inspection", href: "/truck-health-inspection-boksburg" },
   { label: "Fleet Maintenance", href: "/fleet-maintenance" },
 ];
 

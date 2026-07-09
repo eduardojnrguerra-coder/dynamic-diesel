@@ -62,17 +62,21 @@ export type SeoPage = {
 export const primaryLinks: LinkItem[] = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "About Us", href: "/about" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
-export const footerServiceLinks: LinkItem[] = [
+export const footerPopularServiceLinks: LinkItem[] = [
+  { label: "Engine Reconditioning", href: "/engine-reconditioning-boksburg" },
+  { label: "Diesel Diagnostics", href: "/diesel-diagnostics-boksburg" },
+  { label: "Diesel Pumps & Injectors", href: "/diesel-pumps-and-injectors-boksburg" },
+  { label: "Fleet Maintenance", href: "/fleet-maintenance-boksburg" },
+];
+
+export const footerBrandLinks: LinkItem[] = [
   { label: "Volvo Truck Repairs", href: "/volvo-truck-repairs-boksburg" },
   { label: "Scania Truck Repairs", href: "/scania-truck-repairs-boksburg" },
-  { label: "Mercedes Truck Repairs", href: "/mercedes-truck-repairs-boksburg" },
-  { label: "Engine Reconditioning", href: "/mercedes-actros-engine-reconditioning-boksburg" },
-  { label: "Diesel Diagnostics", href: "/services/diesel-engine-diagnostics" },
-  { label: "Fleet Maintenance", href: "/fleet-maintenance" },
+  { label: "Mercedes-Benz Truck Repairs", href: "/mercedes-truck-repairs-boksburg" },
 ];
 
 export const commonFaq: Faq[] = [
@@ -98,11 +102,14 @@ const defaultLinks: LinkItem[] = [
   { label: "Scania Truck Repairs", href: "/scania-truck-repairs-boksburg" },
   { label: "Mercedes-Benz Truck Repairs", href: "/mercedes-truck-repairs-boksburg" },
   { label: "Mercedes Actros Engine Reconditioning", href: "/mercedes-actros-engine-reconditioning-boksburg" },
-  { label: "Diesel Diagnostics", href: "/services/diesel-engine-diagnostics" },
-  { label: "Engine Reconditioning", href: "/mercedes-actros-engine-reconditioning-boksburg" },
-  { label: "Diesel Pumps and Injectors", href: "/services/diesel-pumps-and-injectors" },
-  { label: "Engine Dyno Testing", href: "/services/engine-dyno-testing" },
-  { label: "Fleet Maintenance", href: "/fleet-maintenance" },
+  { label: "Truck Repairs", href: "/truck-repairs-boksburg" },
+  { label: "Truck Servicing", href: "/truck-servicing-boksburg" },
+  { label: "Diesel Diagnostics", href: "/diesel-diagnostics-boksburg" },
+  { label: "Engine Reconditioning", href: "/engine-reconditioning-boksburg" },
+  { label: "Diesel Pumps and Injectors", href: "/diesel-pumps-and-injectors-boksburg" },
+  { label: "Engine Dyno Testing", href: "/engine-dyno-testing-boksburg" },
+  { label: "Fleet Maintenance", href: "/fleet-maintenance-boksburg" },
+  { label: "Truck Health Inspection", href: "/truck-health-inspection-boksburg" },
   { label: "Contact", href: "/contact" },
   { label: "Request Quote", href: quoteHref },
 ];

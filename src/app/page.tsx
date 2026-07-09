@@ -12,14 +12,15 @@ import {
   Truck,
   Wrench,
 } from "lucide-react";
+import { HealthInspectionSection } from "@/components/health-inspection-section";
 import { FaqSection, JsonLd, SeoSchemas } from "@/components/seo";
 import { ContactButtons, Hero, LinkGrid, PageFrame } from "@/components/site-shell";
 import { business, commonFaq, localBusinessSchema, type LinkItem } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Dyna-Mic Diesel | Diesel Truck Repairs Boksburg and East Rand" },
+  title: { absolute: "Dyna-Mic Diesel | Truck Repairs, Servicing & Maintenance Boksburg" },
   description:
-    "Dyna-Mic Diesel in Anderbolt, Boksburg provides diesel truck repairs, diagnostics, engine reconditioning and fleet maintenance support across the East Rand and Gauteng.",
+    "Dyna-Mic Diesel in Anderbolt, Boksburg provides truck repairs, servicing, brake repairs, diesel diagnostics, engine reconditioning and fleet maintenance across the East Rand.",
   alternates: { canonical: "/" },
 };
 
@@ -55,6 +56,24 @@ const brandLinks: LinkItem[] = [
 
 const workshopServices: LinkItem[] = [
   {
+    label: "Truck Repairs",
+    href: "/truck-repairs-boksburg",
+    image: "/images/workshop-hero.jpg",
+    description: "Commercial truck repair support from Anderbolt, Boksburg.",
+  },
+  {
+    label: "Truck Servicing",
+    href: "/truck-servicing-boksburg",
+    image: "/images/workshop-hero.jpg",
+    description: "Minor services, major services and routine maintenance support.",
+  },
+  {
+    label: "Truck Brake Repairs",
+    href: "/truck-brake-repairs-boksburg",
+    image: "/images/workshop-hero.jpg",
+    description: "Truck brake inspections, repairs and maintenance support.",
+  },
+  {
     label: "Mercedes Actros Engine Reconditioning",
     href: "/mercedes-actros-engine-reconditioning-boksburg",
     image: "/images/engine-reconditioning.jpg",
@@ -62,31 +81,25 @@ const workshopServices: LinkItem[] = [
   },
   {
     label: "Diesel Diagnostics",
-    href: "/services/diesel-engine-diagnostics",
+    href: "/diesel-diagnostics-boksburg",
     image: "/images/diagnostics.jpg",
     description: "Fault finding for warning lights, starting issues and power loss.",
   },
   {
     label: "Diesel Pumps and Injectors",
-    href: "/services/diesel-pumps-and-injectors",
+    href: "/diesel-pumps-and-injectors-boksburg",
     image: "/images/diesel-injectors.jpg",
     description: "Fuel system support for pumps, injectors, smoke and poor economy.",
   },
   {
     label: "Engine Dyno Testing",
-    href: "/services/engine-dyno-testing",
+    href: "/engine-dyno-testing-boksburg",
     image: "/images/dyno-testing.jpg",
     description: "Engine testing support for performance and reconditioning work.",
   },
   {
-    label: "Truck Services, Maintenance and Repairs",
-    href: "/services/truck-services-maintenance-and-repairs",
-    image: "/images/workshop-hero.jpg",
-    description: "Workshop servicing and repair support for commercial vehicles.",
-  },
-  {
     label: "Fleet Maintenance",
-    href: "/fleet-maintenance",
+    href: "/fleet-maintenance-boksburg",
     image: "/images/fleet-maintenance.jpg",
     description: "Planned service support for fleet owners and commercial operators.",
   },
@@ -136,8 +149,60 @@ export default function Home() {
       <SeoSchemas faq={homeFaq} breadcrumbs={[{ label: "Home", href: "/" }]} />
       <Hero
         h1="Diesel Truck Repairs, Diagnostics & Engine Reconditioning in Boksburg"
-        summary={`${business.name} specialises in Volvo, Scania and Mercedes-Benz truck repairs, diagnostics, servicing and engine reconditioning, while also assisting with selected other commercial truck brands upon request across Boksburg and the East Rand.`}
+        summary={`${business.name} is a full-service commercial truck repair, servicing and maintenance workshop in Anderbolt, Boksburg, specialising in Volvo, Scania and Mercedes-Benz trucks while considering selected other commercial truck brands upon request.`}
       />
+
+      <section className="border-b border-white/10 bg-[#1b1b1b] py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.16em] text-diesel-red">
+              Complete Truck Care
+            </p>
+            <h2 className="mt-3 text-4xl font-black leading-tight text-white lg:text-5xl">
+              From Routine Servicing to Major Diesel Repairs
+            </h2>
+            <div className="mt-5 space-y-4 text-lg leading-8 text-white/66">
+              <p>
+                Dyna-Mic Diesel provides comprehensive truck repair, servicing
+                and maintenance support from Anderbolt, Boksburg.
+              </p>
+              <p>
+                From brake repairs and routine maintenance to diesel diagnostics,
+                engine reconditioning and fleet support, our team helps
+                commercial vehicle operators address immediate repair needs while
+                keeping long-term vehicle condition in mind.
+              </p>
+            </div>
+            <Link
+              href="/services"
+              className="mt-7 inline-flex items-center gap-2 rounded bg-diesel-red px-5 py-3 text-sm font-black text-[#111111] transition hover:bg-safety"
+            >
+              View Complete Services <ArrowRight size={17} />
+            </Link>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {[
+              ["Truck Repairs", "/truck-repairs-boksburg"],
+              ["Truck Servicing", "/truck-servicing-boksburg"],
+              ["Truck Brake Repairs", "/truck-brake-repairs-boksburg"],
+              ["Diesel Diagnostics", "/diesel-diagnostics-boksburg"],
+              ["Engine Reconditioning", "/engine-reconditioning-boksburg"],
+              ["Diesel Pumps & Injectors", "/diesel-pumps-and-injectors-boksburg"],
+              ["Engine Dyno Testing", "/engine-dyno-testing-boksburg"],
+              ["Fleet Maintenance", "/fleet-maintenance-boksburg"],
+            ].map(([label, href]) => (
+              <Link
+                key={href}
+                href={href}
+                className="flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.035] px-5 py-4 font-bold text-white/78 transition hover:-translate-y-1 hover:border-diesel-red/50 hover:text-white"
+              >
+                {label}
+                <ArrowRight size={17} className="text-diesel-red" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="section-dark py-24">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
@@ -251,6 +316,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <HealthInspectionSection compact />
 
       <section className="bg-[#111111] py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

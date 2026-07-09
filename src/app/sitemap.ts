@@ -7,6 +7,7 @@ import {
   servicePages,
   siteUrl,
 } from "@/lib/site";
+import { serviceLandingPages } from "@/lib/service-landing-pages";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const confirmedBrandSlugs = new Set([
@@ -31,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog",
     "/contact",
     "/request-a-quote",
+    ...serviceLandingPages.map((page) => page.path),
   ];
 
   const highPriorityRoutes = new Set([
@@ -43,6 +45,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services/diesel-pumps-and-injectors",
     "/services/engine-dyno-testing",
     "/fleet-maintenance",
+    "/truck-repairs-boksburg",
+    "/truck-servicing-boksburg",
+    "/truck-brake-repairs-boksburg",
+    "/diesel-diagnostics-boksburg",
+    "/engine-reconditioning-boksburg",
+    "/diesel-pumps-and-injectors-boksburg",
+    "/engine-dyno-testing-boksburg",
+    "/fleet-maintenance-boksburg",
+    "/preventative-truck-maintenance-boksburg",
+    "/truck-health-inspection-boksburg",
   ]);
 
   const dynamicRoutes = [

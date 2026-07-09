@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { HealthInspectionSection } from "@/components/health-inspection-section";
 import { QuoteRequestForm } from "@/components/quote-request-form";
 import { Breadcrumbs, FaqSection, JsonLd, SeoSchemas } from "@/components/seo";
 import { Hero, LinkGrid, PageFrame } from "@/components/site-shell";
@@ -59,6 +60,10 @@ export default function RequestQuotePage() {
       </div>
       <Hero h1={page.h1} summary={page.summary} eyebrow="Request a quote" />
       <QuoteRequestForm />
+      <HealthInspectionSection
+        compact
+        copy="When your truck is booked into the workshop, Dyna-Mic Diesel includes a complimentary truck health inspection to help identify potential maintenance concerns and developing problems that may require attention."
+      />
 
       <section className="border-y border-white/10 bg-[#1b1b1b] py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

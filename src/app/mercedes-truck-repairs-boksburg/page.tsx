@@ -75,13 +75,16 @@ const relatedServices: LinkItem[] = [
     label: "Mercedes Actros Engine Reconditioning",
     href: "/mercedes-actros-engine-reconditioning-boksburg",
   },
-  { label: "Diesel Diagnostics", href: "/services/diesel-engine-diagnostics" },
-  { label: "Diesel Pumps and Injectors", href: "/services/diesel-pumps-and-injectors" },
-  { label: "Engine Dyno Testing", href: "/services/engine-dyno-testing" },
+  { label: "Truck Repairs", href: "/truck-repairs-boksburg" },
+  { label: "Truck Servicing", href: "/truck-servicing-boksburg" },
+  { label: "Diesel Diagnostics", href: "/diesel-diagnostics-boksburg" },
+  { label: "Diesel Pumps and Injectors", href: "/diesel-pumps-and-injectors-boksburg" },
+  { label: "Engine Dyno Testing", href: "/engine-dyno-testing-boksburg" },
+  { label: "Truck Health Inspection", href: "/truck-health-inspection-boksburg" },
   { label: "Fleet Maintenance", href: "/fleet-maintenance" },
   {
     label: "Truck Services, Maintenance and Repairs",
-    href: "/services/truck-services-maintenance-and-repairs",
+    href: "/truck-servicing-boksburg",
   },
 ];
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { HealthInspectionSection } from "@/components/health-inspection-section";
 import { SeoPageTemplate } from "@/components/page-template";
 import { commonFaq, type SeoPage } from "@/lib/site";
 
@@ -29,8 +30,10 @@ const page: SeoPage = {
     },
   ],
   internalLinks: [
-    { label: "Truck services", href: "/services/truck-services" },
-    { label: "Commercial vehicle repairs", href: "/services/commercial-vehicle-repairs" },
+    { label: "Truck servicing", href: "/truck-servicing-boksburg" },
+    { label: "Truck repairs", href: "/truck-repairs-boksburg" },
+    { label: "Preventative maintenance", href: "/preventative-truck-maintenance-boksburg" },
+    { label: "Truck health inspection", href: "/truck-health-inspection-boksburg" },
     { label: "Request a quote", href: "/request-a-quote#quote-form" },
   ],
 };
@@ -54,6 +57,12 @@ export default function FleetMaintenancePage() {
             </p>
           </div>
         ))}
+      </div>
+      <div className="mt-12">
+        <HealthInspectionSection
+          compact
+          copy="Fleet maintenance works best when operators understand the condition of each truck. Dyna-Mic Diesel includes a complimentary truck health inspection with workshop visits to help identify potential maintenance concerns requiring attention."
+        />
       </div>
     </SeoPageTemplate>
   );

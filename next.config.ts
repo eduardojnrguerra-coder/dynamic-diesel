@@ -1,8 +1,6 @@
 import type { NextConfig } from "next";
 
 const legacyRedirects = [
-  { source: "/Services", destination: "/services" },
-  { source: "/Services/", destination: "/services" },
   { source: "/Services/index.html", destination: "/services" },
   { source: "/Services.html", destination: "/services" },
   { source: "/Services/Services", destination: "/services" },
@@ -26,14 +24,6 @@ const legacyRedirects = [
   {
     source: "/Services/Diagnostics-and-Engine-Dyno-Testing/",
     destination: "/services/diesel-engine-diagnostics",
-  },
-  {
-    source: "/Services/Diesel-Pumps-and-Injectors",
-    destination: "/services/diesel-pumps-and-injectors",
-  },
-  {
-    source: "/Services/Diesel-Pumps-and-Injectors/",
-    destination: "/services/diesel-pumps-and-injectors",
   },
   {
     source: "/Services/Service-maintenance-and-Repairs",
